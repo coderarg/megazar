@@ -1,3 +1,7 @@
+/***********************************
+            GENERALES
+************************************/
+
 @font-face {
     font-family: ErasBold;
     src: url(tipografia/eras-bold-5871820c913a2.otf);
@@ -14,7 +18,7 @@
 body{
     min-height: 100vh;
     width: 100%;
-    background-image: url(../sources/images/component-background.png);
+    background-image: url(../sources/images/background/component-background.png);
     background-size: 5em;
 }
 
@@ -35,12 +39,17 @@ header {
 
 .logo {
     font-family: ErasBold;
+}
+
+.logo__link {
+    text-decoration: none;
     color: #FF0000;
+
 }
 
 .menu {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 3fr .5fr .5fr .5fr;
     border: 1px black;
 }
 
@@ -48,4 +57,17 @@ header {
     text-align: center;
     padding: 10px 20px;
     font-family: ErasDemi;
+}
+
+.instagram, .carrito, .mercadolibre {
+    height: 25px;
+}
+
+.menu__link {
+text-decoration: none;
+color: #000000;
+}
+
+.active {
+    color: #FF6363;
 }
