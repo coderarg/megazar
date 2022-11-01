@@ -1,6 +1,10 @@
 /***********************************
             GENERALES
 ************************************/
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
 @font-face {
     font-family: ErasBold;
@@ -75,8 +79,10 @@ color: #766666;
 .slide {
     width: 100%;
     display: block;
+    margin: 0px;
 }
 
 .slide__img {
     width: 100%;
+    margin: 0px;
 }
