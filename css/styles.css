@@ -59,13 +59,13 @@ header {
     font-family: ErasDemi;
 }
 
-.instagram, .carrito, .mercadolibre {
-    height: 25px;
-}
-
 .menu__link {
 text-decoration: none;
-color: #000000;
+color: #766666;
+}
+
+.instagram, .carrito, .mercadolibre {
+    height: 25px;
 }
 
 .active {
