@@ -71,3 +71,12 @@ color: #766666;
 .active {
     color: #FF6363;
 }
+
+.slide {
+    width: 100%;
+    display: block;
+}
+
+.slide__img {
+    width: 100%;
+}
