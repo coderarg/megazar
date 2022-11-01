@@ -15,7 +15,7 @@ body{
     min-height: 100vh;
     width: 100%;
     background-image: url(/sources/images/component-background.png);
-    background-size: 80px;
+    background-size: 5em;
 }
 
 header {
