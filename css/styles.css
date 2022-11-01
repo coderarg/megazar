@@ -12,6 +12,8 @@
 }
 
 body{
+    min-height: 100vh;
+    width: 100%;
     background-image: url(/sources/images/component-background.png);
     background-size: 80px;
 }
@@ -47,5 +49,3 @@ header {
     padding: 10px 20px;
     font-family: ErasDemi;
 }
-
-:active
