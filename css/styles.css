@@ -198,10 +198,13 @@ footer {
     max-width: 1440px;
     height: 500px;
     margin: auto;
-    background-image: url(sources/images/banners/locationslide.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+}
+
+.location img {
+    width: 100%;
 }
 
 
