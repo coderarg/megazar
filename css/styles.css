@@ -23,8 +23,9 @@ body{
     min-height: 100vh;
     background-image: url(../sources/images/background/component-background.png);
     background-size: 5em;
-    display: grid;
-    grid-template-rows: auto 1fr auto ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
@@ -131,16 +132,55 @@ header {
 }
 
 footer {
-    bottom: 0;
-    width: 100%;
+    background-color: #333333;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__container {
-    height: 200px;
-    margin: auto;
-    background-color: #333333;
-
+    width: 80%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.information__container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.information__logo {
+    width: 150px;
+}
+
+.information {
+    margin-left: 20px;
+    font-size: 1em;
+}
+.information__title, .created-by {
+    color: #e7e7e7;
+    font-family: ErasBook;
+    letter-spacing: 2px;
+}
+
+.information__text {
+    font-family: ErasBook;
+    color: #e7e7e7;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.created-by {
+    width: 400px;
+    text-align: right;
+    margin-top: 100px ;
+}
+
 /***********************************
                 INICIO
 ************************************/
@@ -196,11 +236,10 @@ footer {
 
 .location {
     max-width: 1440px;
-    height: 500px;
-    margin: auto;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+    margin: auto;
 }
 
 .location img {
@@ -212,11 +251,50 @@ footer {
 @media screen and (max-width: 1024px){
     .header__container {
         width: 90%;
+        justify-content: center;
     }
-}
 
-@media screen and (max-width: 1024px){
-    .header__container {
-        width: 90%;
+    .menu__container {
+        display: none;
     }
+
+    .categoria__container {
+        width: 90%;
+        max-width: 1440px;
+        margin: 20px auto 50px auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .categoria__item--container {
+        width: 150px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .categoria__item {
+        width: 100px;
+        height: 100px;
+        background-color: #FF6363;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10%;
+    }
+    
+    .categoria__icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .categoria__caption {
+        font-family: ErasBook;
+        font-size: 14px;
+        margin: 10px;
+        letter-spacing: 2px;
+    }
+    
 }
