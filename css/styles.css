@@ -246,9 +246,7 @@ footer {
     width: 100%;
 }
 
-
-
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1020px){
     .header__container {
         width: 90%;
         justify-content: center;
@@ -290,4 +288,18 @@ footer {
     .created-by {
         margin: 20px auto;
     }
+}
+
+/***********************************
+            Productos
+************************************/
+
+.aside--menu__container {
+    width: 25%;
+    border: 2px solid black;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
 }
