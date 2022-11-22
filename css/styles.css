@@ -21,8 +21,6 @@
 
 body{
     min-height: 100vh;
-    background-image: url(../sources/images/background/component-background.png);
-    background-size: 5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,15 +54,23 @@ header {
     align-items: center;
 }
 
+.chart__button {
+    display: none;
+}
+
 .logo {
     font-family: ErasBold;
     font-size: 40px;
-    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .logo__link {
     text-decoration: none;
     color: #FF0000;
+}
+
+.hamburguer__button {
+    display: none;
 }
 
 .menu__container {
@@ -80,7 +86,7 @@ header {
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
 .menu__item {
@@ -88,7 +94,7 @@ header {
     font-family: ErasDemi;
     font-size: 20px;
     letter-spacing: 2px;
-    margin: auto 10px;
+    margin: auto;
     padding: 10px 20px;
     text-decoration: none;
     color: #766666;
@@ -156,7 +162,7 @@ footer {
 }
 
 .information__logo {
-    width: 150px;
+    width: 100px;
 }
 
 .information {
@@ -181,6 +187,47 @@ footer {
     margin-top: 100px ;
 }
 
+
+@media screen and (max-width: 1023px){
+    .header__container {
+        width: 90%;
+    }
+
+    .chart__button {
+        display: block;
+    }
+
+    .hamburguer__button {
+        display: block;
+    }
+
+    .logo {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    .menu__container {
+        display: none;
+    }
+
+    .footer__container {
+        flex-direction: column;
+    }
+
+    .information__container {
+        flex-direction: column;
+    }
+
+    .information__logo {
+        margin-bottom: 15px;
+    }
+
+    .created-by {
+        text-align: center;
+        font-size: 12px;
+        margin: 20px auto;
+    }
+}
 /***********************************
                 INICIO
 ************************************/
@@ -246,18 +293,8 @@ footer {
     width: 100%;
 }
 
-
-
-@media screen and (max-width: 1024px){
-    .header__container {
-        width: 90%;
-        justify-content: center;
-    }
-
-    .menu__container {
-        display: none;
-    }
-
+@media screen and (max-width: 1023px){
+    
     .categoria__container {
         width: 90%;
         max-width: 1440px;
@@ -282,12 +319,87 @@ footer {
     .categoria__caption {
         font-size: 14px;
     }
+}
 
-    .footer__container {
-        flex-direction: column;
-    }
 
-    .created-by {
-        margin: 20px auto;
+/***********************************
+              CONTACTO
+************************************/
+.contact__container {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact__img--container {
+    width: 40%;
+}
+
+.contact__img {
+    width: 100%;
+}
+
+.form {
+    margin: 20px 10px;
+    width: 40%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.form__title {
+    font-size: 2rem;
+    margin-bottom: .5em;
+    font-family: ErasDemi;
+
+}
+
+.form__container {
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+
+.form__group {
+    position: relative;
+
+}
+
+.form__input {
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1.5rem;
+    padding: .6em 0;;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #FF6363;
+    font-family: ErasBook;
+    letter-spacing: 2px;
+}
+
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
+    transform: translateY(-12px);
+}
+
+.form__label {
+    color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s;
+    font-family: ErasBook;
+    letter-spacing: 2px;
+
+}
+
+@media screen and (max-width: 1023px) {
+    .contact__img--container {
+        display: none;
     }
 }
