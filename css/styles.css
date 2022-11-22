@@ -2,404 +2,459 @@
             GENERALES
 ************************************/
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 @font-face {
-    font-family: ErasBold;
-    src: url(tipografia/eras-bold-5871820c913a2.otf);
+  font-family: ErasBold;
+  src: url(tipografia/eras-bold-5871820c913a2.otf);
 }
 @font-face {
-    font-family: ErasDemi;
-    src: url(tipografia/eras-demi-587182767b329.otf);
+  font-family: ErasDemi;
+  src: url(tipografia/eras-demi-587182767b329.otf);
 }
 @font-face {
-    font-family: ErasBook;
-    src: url(tipografia/eras-book-587181c4d21d4.otf);
+  font-family: ErasBook;
+  src: url(tipografia/eras-book-587181c4d21d4.otf);
 }
 
 body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 .glass {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 4;
 }
 
 .header__container {
-    max-width: 1440px;
-    width: 80%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1440px;
+  width: 80%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
 }
 
 .chart__button {
-    display: none;
+  display: none;
 }
 
 .logo {
-    font-family: ErasBold;
-    font-size: 40px;
-    margin-right: 20px;
+  font-family: ErasBold;
+  font-size: 40px;
+  margin-right: 20px;
 }
 
 .logo__link {
-    text-decoration: none;
-    color: #FF0000;
+  text-decoration: none;
+  color: #FF0000;
 }
 
 .hamburguer__button {
-    display: none;
+  display: none;
 }
 
 .menu__container {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .menu__items--container {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .menu__item {
-    text-align: center;
-    font-family: ErasDemi;
-    font-size: 20px;
-    letter-spacing: 2px;
-    margin: auto;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #766666;
-    cursor: default;
-    border-radius: 5px;
+  text-align: center;
+  font-family: ErasDemi;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #766666;
+  cursor: default;
+  border-radius: 5px;
 }
 
 .menu__icons--container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu__icon {
-    text-align: center;
-    margin: auto 5px;
-    padding: 10px;
-    text-decoration: none;
-    color: #766666;
-    cursor: default;
-    border-radius: 5px;
+  text-align: center;
+  margin: auto 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: #766666;
+  cursor: default;
+  border-radius: 5px;
 }
 
 .menu__icon--img {
-    height: 20px;
+  height: 20px;
 
 }
 
 .menu__item:hover {
-    background-color: #FF6363;
-    color: white;
+  background-color: #FF6363;
+  color: white;
 }
 
 .instagram, .carrito, .mercadolibre {
-    height: 25px;
+  height: 25px;
 }
 
 .active {
-    color: #FF6363;
+  color: #FF6363;
 }
 
 footer {
-    background-color: #333333;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #333333;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__container {
-    width: 80%;
-    max-width: 1440px;
-    margin: 40px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 80%;
+  max-width: 1440px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .information__container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .information__logo {
-    width: 100px;
+  width: 100px;
 }
 
 .information {
-    margin-left: 20px;
-    font-size: 1em;
+  margin-left: 20px;
+  font-size: 1em;
 }
 .information__title, .created-by {
-    color: #e7e7e7;
-    font-family: ErasBook;
-    letter-spacing: 2px;
+  color: #e7e7e7;
+  font-family: ErasBook;
+  letter-spacing: 2px;
 }
 
 .information__text {
-    font-family: ErasBook;
-    color: #e7e7e7;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+  font-family: ErasBook;
+  color: #e7e7e7;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
 }
 
 .created-by {
-    text-align: right;
-    margin-top: 100px ;
+  text-align: right;
+  margin-top: 100px ;
 }
 
 
 @media screen and (max-width: 1023px){
-    .header__container {
-        width: 90%;
-    }
+  .header__container {
+    width: 90%;
+  }
 
-    .chart__button {
-        display: block;
-    }
+  .chart__button {
+    display: block;
+  }
 
-    .hamburguer__button {
-        display: block;
-    }
+  .hamburguer__button {
+    display: block;
+  }
 
-    .logo {
-        font-size: 26px;
-        margin: 0;
-    }
+  .logo {
+    font-size: 26px;
+    margin: 0;
+  }
 
-    .menu__container {
-        display: none;
-    }
+  .menu__container {
+    display: none;
+  }
 
-    .footer__container {
-        flex-direction: column;
-    }
+  .footer__container {
+    flex-direction: column;
+  }
 
-    .information__container {
-        flex-direction: column;
-    }
+  .information__container {
+    flex-direction: column;
+  }
 
-    .information__logo {
-        margin-bottom: 15px;
-    }
+  .information__logo {
+    margin-bottom: 15px;
+  }
 
-    .created-by {
-        text-align: center;
-        font-size: 12px;
-        margin: 20px auto;
-    }
+  .created-by {
+    text-align: center;
+    font-size: 12px;
+    margin: 20px auto;
+  }
 }
 /***********************************
                 INICIO
 ************************************/
 
 .slide__container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0px auto 50px auto;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0px auto 50px auto;
 }
 
 .slide__img {
-    width: 100%;
+  width: 100%;
 }
 
 .categoria__container {
-    width: 80%;
-    max-width: 1440px;
-    margin: 20px auto 50px auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+  width: 80%;
+  max-width: 1440px;
+  margin: 20px auto 50px auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
 }
 
 .categoria__item--container {
-    width: 200px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    align-items: center;
+  width: 200px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .categoria__item {
-    width: 150px;
-    height: 150px;
-    background-color: #FF6363;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10%;
+  width: 150px;
+  height: 150px;
+  background-color: #FF6363;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
 }
 
 .categoria__icon {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .categoria__caption {
-    font-family: ErasBook;
-    font-size: 20px;
-    margin: 10px;
-    letter-spacing: 2px;
+  font-family: ErasBook;
+  font-size: 20px;
+  margin: 10px;
+  letter-spacing: 2px;
 }
 
 .location {
-    max-width: 1440px;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    margin: auto;
+  max-width: 1440px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  margin: auto;
 }
 
 .location img {
-    width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1023px){
     
-    .categoria__container {
-        width: 90%;
-        max-width: 1440px;
-        margin: 20px auto 50px auto;
-        flex-flow: row wrap;
-    }
+  .categoria__container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 20px auto 50px auto;
+    flex-flow: row wrap;
+  }
 
-    .categoria__item--container {
-        width: 150px;
-    }
-    
-    .categoria__item {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .categoria__icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .categoria__caption {
-        font-size: 14px;
-    }
+  .categoria__item--container {
+    width: 150px;
+  }
+  
+  .categoria__item {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .categoria__icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .categoria__caption {
+    font-size: 14px;
+  }
 }
 
+
+/***********************************
+            PRODUCTOS
+************************************/
+
+.development__container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.development__title {
+  font-family: ErasDemi;
+  color: #766666;
+  margin: 50px 20px;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.development__img {
+  width: 70%;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .development__title {
+      font-size: 1.2em;
+    }
+}
 
 /***********************************
               CONTACTO
 ************************************/
 .contact__container {
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .contact__img--container {
-    width: 40%;
+  width: 40%;
 }
 
 .contact__img {
-    width: 100%;
+  width: 100%;
 }
 
 .form {
-    margin: 20px 10px;
-    width: 40%;
-    max-width: 400px;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #ffffff;
+  margin: 20px 10px;
+  width: 40%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 .form__title {
-    font-size: 2rem;
-    margin-bottom: .5em;
-    font-family: ErasDemi;
+  font-size: 2rem;
+  margin-bottom: .5em;
+  font-family: ErasDemi;
 
 }
 
 .form__container {
-    margin-top: 3em;
-    display: grid;
-    gap: 2.5em;
+  margin-top: 3em;
+  display: grid;
+  gap: 2em;
 }
 
 .form__group {
-    position: relative;
+  position: relative;
 
 }
 
 .form__input {
-    width: 100%;
-    background: none;
-    color: #706c6c;
-    font-size: 1.5rem;
-    padding: .6em 0;;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #FF6363;
-    font-family: ErasBook;
-    letter-spacing: 2px;
+  width: 100%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: .6em 0;;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #FF6363;
+  font-family: ErasBook;
+  letter-spacing: 2px;
 }
 
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown) + .form__label {
-    transform: translateY(-12px);
+  transform: translateY(-12px);
 }
 
 .form__label {
-    color: var(--color);
-    position: absolute;
-    top: 0;
-    left: 5px;
-    transform: translateY(10px);
-    transition: transform .5s;
-    font-family: ErasBook;
-    letter-spacing: 2px;
+  color: var(--color);
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s;
+  font-family: ErasBook;
+  letter-spacing: 2px;
+  font-size: 10px;
 
 }
 
+.form__submit {
+  background-color: white;
+  border: 2px solid #ff6363;
+  border-radius: 5px;
+  color: #ff6363;
+  font-family: ErasBold;
+  font-size: 1em;
+  letter-spacing: 2px;
+  padding: 0.5em;
+
+}
+
+.form__submit:hover {
+  background-color: #ff9b9b;
+  color: white;
+  transition: .5s;
+}
+
 @media screen and (max-width: 1023px) {
-    .contact__img--container {
-        display: none;
-    }
+  .form {
+    width: 90%;
+  }
+
+  .contact__img--container {
+    display: none;
+  }
 }
