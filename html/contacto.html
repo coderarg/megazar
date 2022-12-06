@@ -49,8 +49,22 @@
             <label for="phone" class="form__label">Número de Teléfono</label>
           </div>
           <div class="form__group">
-            <input type="" name="category" id="category" class="form__input" placeholder=" ">
+            <select name="category" id="category" class="form__input">
+              <option value="undefined"></option>
+              <option value="Vajilla">Vajilla</option>
+              <option value="Vajilla">Cocina</option>
+              <option value="Vajilla">Decoración</option>
+              <option value="Vajilla">Otros</option>
+            </select>
             <label for="category" class="form__label">Categoría</label>
+          </div>
+          <div class="form__group">
+            <textarea name="question" id="question" class="form__input" cols="30" rows="5" placeholder=" "></textarea>
+            <label for="question" class="form__label">Escriba su mensaje aquí...</label>
+          </div>
+          <div class="form__group">
+            <input type="checkbox" class="form__imput--ok" checked>
+            <label for="question" class="form__label--ok">Deseo recibir correos electrónicos de Megazar con las últimas novedades y descuentos exclusivos. Acepto <a href="#">Términos y Condiciones</a></label>
           </div>
           <input class="form__submit" type="submit" value="ENVIAR">
         </div>

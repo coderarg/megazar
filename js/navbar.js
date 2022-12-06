@@ -14,8 +14,3 @@ buttonOpen.addEventListener("click", openNav = (e) => {
   e.preventDefault();
   navBar.style.width = "100%";
 }); */
-
-/********************************
-     1er Preentrega Proyecto
-********************************/
-
