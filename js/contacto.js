@@ -2,8 +2,6 @@
      2da Preentrega Proyecto
 ********************************/
 
-window.onload = () => {
-
 //Entradas por prompt, salidas por alert o console.log
 //Objetos
 //Arrays
@@ -106,5 +104,3 @@ if(pidoDatos) {
 
 //Dejo el console.log para mostrar
 console.log(contactos);
-
-}
