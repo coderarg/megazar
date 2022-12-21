@@ -230,6 +230,93 @@ footer {
     margin: 20px auto;
   }
 }
+
+/***************NAVBAR**************/
+
+.navbar__container {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  transition: 1s;
+
+  position: fixed;
+  top: 0%;
+  left: 100%;
+  z-index: 40;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__header {
+  height: 100px;
+  width: 90%;
+  color: #FF6363;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close__button {
+  display: block
+}
+
+.navbar__menu{
+  width: 90%;
+  color: #FF6363;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__items {
+  text-align: center;
+  font-family: ErasDemi;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #766666;
+  cursor: default;
+  border-radius: 5px;
+
+}
+
+.navbar__items:hover {
+  background-color: #FF6363;
+  color: white;
+}
+
+.navbar__icon {
+  text-align: center;
+  margin: auto 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: #766666;
+  cursor: default;
+  border-radius: 5px;
+}
+
+.navbar__icon--img {
+  height: 20px;
+
+}
+
+.navbar__footer{
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+
 /***********************************
                 INICIO
 ************************************/

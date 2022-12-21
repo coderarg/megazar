@@ -4,11 +4,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
   <title>NavBar</title>
 </head>
 <body>
-  <div class="navbar">
-      
-  </div>
+  <header class="glass">
+		<div class="header__container">
+			<img class="chart__button" src="../sources/logo/chart-mediaq.png" alt="carrito">
+			<h1 class="logo"><a class="logo__link" href="../index.html">Megazar</a></h1>
+			<img id="hamburguer__button" class="hamburguer__button" src="../sources/logo/hamburger-button.png" alt="carrito">
+			<div class="menu__container">
+				<div class="menu__items--container">
+					<a class="menu__item" href="../index.html">Inicio</a>
+					<a class="menu__item active" href="#">Productos</a>
+					<a class="menu__item" href="contacto.html">Contacto</a>		
+				</div>
+				<div class="menu__icons--container">
+					<a class="menu__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><img src="../sources/logo/ig.png" alt="instagram-logo" class="menu__icon--img"></a>
+					<a class="menu__icon" href="https://megazar.mercadoshops.com.ar/" target="_blank"><img src="../sources/logo/mercado-libre-icon.png" alt="mercado-libre-icon" class="menu__icon--img"></a>
+					<a class="menu__icon" id="menu__icon" href="#"><img src="../sources/logo/chart.png" alt="chart-icon" class="menu__icon--img"></a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--Navbar-->
+  	<div id="navbar__container" class="navbar__container">
+    	<div id="navbar__header" class="navbar__header">
+			<img class="chart__button" src="../sources/logo/chart-mediaq.png" alt="carrito">
+			<h1 class="logo"><a class="logo__link" href="../index.html">Megazar</a></h1>
+			<img id="close__button" class="close__button" src="../sources/logo/close-button.png" alt="carrito">
+		</div>
+    	<div id="navbar__menu" class="navbar__menu">
+			<a class="navbar__items" href="../index.html">Inicio</a>
+			<a class="navbar__items active" href="#">Productos</a>
+			<a class="navbar__items" href="contacto.html">Contacto</a>		
+		</div>
+		<div class="navbar__footer">
+			<a class="navbar__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><img src="../sources/logo/ig.png" alt="instagram-logo" class="navbar__icon--img"></a>
+			<a class="navbar__icon" href="https://megazar.mercadoshops.com.ar/" target="_blank"><img src="../sources/logo/mercado-libre-icon.png" alt="mercado-libre-icon" class="navbar__icon--img"></a>
+		</div>
+  	</div>
+  <script src="../js/navbar.js"></script>
 </body>
 </html>

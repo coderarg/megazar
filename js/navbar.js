@@ -1,16 +1,16 @@
 /********************************
              NAVBAR
 ********************************/
-/* const navBar = document.getElementById("nav__bar");
-const buttonClose = document.getElementById("nav__button--close");
-const buttonOpen = document.getElementById("nav__button--open");
+const navBar = document.getElementById("navbar__container");
+const buttonClose = document.getElementById("close__button");
+const buttonOpen = document.getElementById("hamburguer__button");
 
 buttonClose.addEventListener("click", closeNav = (e) => {
   e.preventDefault();
-  navBar.style.width = "0%";
+  navBar.style.left = "100%";
 });
 
 buttonOpen.addEventListener("click", openNav = (e) => {
   e.preventDefault();
-  navBar.style.width = "100%";
-}); */
+  navBar.style.left = "0%";
+});

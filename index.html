@@ -13,7 +13,7 @@
     <div class="header__container">
       <img class="chart__button" src="./sources/logo/chart-mediaq.png" alt="carrito">
       <h1 class="logo"><a class="logo__link" href="#">Megazar</a></h1>
-      <img class="hamburguer__button" src="./sources/logo/hamburger-button.png" alt="carrito">
+      <img id="hamburguer__button" class="hamburguer__button" src="./sources/logo/hamburger-button.png" alt="carrito">
       <div class="menu__container">
         <div class="menu__items--container">
           <a class="menu__item active" href="#">Inicio</a>
@@ -28,6 +28,23 @@
       </div>
     </div>
   </header>
+  <!--Navbar-->
+	<div id="navbar__container" class="navbar__container">
+    <div id="navbar__header" class="navbar__header">
+      <img class="chart__button" src="./sources/logo/chart-mediaq.png" alt="carrito">
+      <h1 class="logo"><a class="logo__link" href="#">Megazar</a></h1>
+      <img id="close__button" class="close__button" src="./sources/logo/close-button.png" alt="carrito">
+    </div>
+    <div id="navbar__menu" class="navbar__menu">
+      <a class="navbar__items" href="">Inicio</a>
+      <a class="navbar__items active" href="./html/productos.html">Productos</a>
+      <a class="navbar__items" href="./html/contacto.html">Contacto</a>		
+    </div>
+    <div class="navbar__footer">
+      <a class="navbar__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><img src="./sources/logo/ig.png" alt="instagram-logo" class="navbar__icon--img"></a>
+      <a class="navbar__icon" href="https://megazar.mercadoshops.com.ar/" target="_blank"><img src="./sources/logo/mercado-libre-icon.png" alt="mercado-libre-icon" class="navbar__icon--img"></a>
+    </div>
+  </div>
   <main>
     <div class="slide__container">
       <img src="./sources/images/banners/banner.png" alt="slide" class="slide__img">
@@ -79,5 +96,6 @@
       <h4 class="created-by">Sitio Web creado por Lucas García</h4>
     </div>
   </footer>
+  <script src="./js/navbar.js"></script>
 </body>
 </html>
