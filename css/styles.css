@@ -177,7 +177,6 @@ footer {
 .information {
   margin-left: 20px;
   font-size: 1em;
-  min-width: 300px;
 }
 
 .information__title, .created-by {
@@ -196,7 +195,6 @@ footer {
 .created-by {
   text-align: right;
   margin-top: 100px;
-  min-width: 300px;
 }
 
 
@@ -222,6 +220,14 @@ footer {
     display: none;
   }
 
+  .footer__container {
+    width: 90%;
+  }
+
+  .information__container{
+    width: auto;
+  }
+
   .information__logo {
     margin-bottom: 15px;
   }
@@ -239,6 +245,13 @@ footer {
     text-align: center;
     font-size: 12px;
     margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 320px){
+
+  .information__logo {
+    width: 50px;
   }
 }
 
