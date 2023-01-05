@@ -3,34 +3,122 @@
 ********************************/
 
 /********************************
-      Entidades y Clases
-********************************/
-
-/********************************
             Variables
 ********************************/
-let catTools = "Herramientas";
-let catKitchen = "Cocina";
-let catPlates = "Vajilla";
-let catDeco = "Decoración";
-let catSport = "Deportes"
-
 const products = [
-    {id:1, descripcion: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción", categoria: catTools, precio: 6199, stock: 0, url: "../sources\images\categoria-herramientas\lupa-plegable-luzled\lupa-plegable-led-1.png"},
-    {id:2, descripcion: "Pack 6 Velas Led Con Llama Con Movimiento Realistas", categoria: catDeco, precio: 6300, stock: 3, url: "../sources\images\categoria-decoracion\velas-led-movimiento\velas-led-movimiento-4.png"},
-    {id:3, descripcion: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm", categoria: catKitchen, precio: 4569, stock: 3, url: "../sources\images\categoria-cocina\bowls-acero-inoxidable\bowl-acero-inoxidable-2.png"},
-    {id:4, descripcion: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático", categoria: catKitchen, precio: 3309, stock: 3, url: "../sources\images\categoria-cocina\cuchillo-hacha\cuchillo-hacha-hachuela-1.png"},
-    {id:5, descripcion: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica", categoria: catPlates, precio: 3820, stock: 4, url: "../sources\images\categoria-vajilla\plato-rectangular-bandeja\plato-rectangular-bandeja-2.png"},
-    {id:6, descripcion: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería", categoria: catKitchen, precio: 5727, stock: 3, url: "../sources\images\categoria-cocina\bandeja-rectangular-carniceria\bandeja-rectangular-carniceria-1.png"},
-    {id:7, descripcion: "Tijera Para Peluquería Canina Esquilar Ovejas Animales", categoria: catTools, precio: 4655, stock: 4, url: "../sources\images\categoria-herramientas\tijeras-esquilar\tijera-esquilar-1.png"},
-    {id:8, descripcion: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado", categoria: catKitchen, precio: 3938, stock: 3, url: "../sources\images\categoria-cocina\set-cuchillos-pelapapa\set-cuchillos-pelapapa-1.png"},
-    {id:9, descripcion: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", categoria: catDeco, precio: 2037, stock: 0, url: "../sources\images\categoria-decoracion\luces-navidad-lluvia\luces-navidad-lluvia-1.png"},
-    {id:10, descripcion: "100 Luces Arroz Navidad Led Guirnalda X2 unidades", categoria: catDeco, precio: 2000, stock: 3, url: "../sources\images\categoria-decoracion\luces-navidad-100-calidas\luces-navidad-100-calidas-1.png"},
-    {id:11, descripcion: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto", categoria: catTools, precio: 1299, stock: 5, url: "../sources\images\categoria-herramientas\limpia-vidrios\limpia-vidrios-rasqueta-2.png"},
-    {id:12, descripcion: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol", categoria: catSport, precio: 3165, stock: 5, url: "../sources\images\categoria-deportes\navaja-tornasol-practica\navaja-tornasol-practica.png"},
-    {id:13, descripcion: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable", categoria: catKitchen, precio: 1936, stock: 4, url: "../sources\images\categoria-cocina\prensa-francesa\prensa-francesa-2.png"},
-    {id:14, descripcion: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida", categoria: catKitchen, precio: 7635, stock: 4, url: "../sources\images\categoria-cocina\cafetera-italiana\cafetera-italiana-2.png"},
+    {
+        id: 1,
+        descripcion: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción",
+        categoria: "herramientas",
+        precio: 6199,
+        stock: 0,
+        url: "../sources\images\categoria-herramientas\lupa-plegable-luzled\lupa-plegable-led-1.png"
+    },
+    {
+        id: 2,
+        descripcion: "Pack 6 Velas Led Con Llama Con Movimiento Realistas",
+        categoria: "decoracion",
+        precio: 6300,
+        stock: 3,
+        url: "../sources\images\categoria-decoracion\velas-led-movimiento\velas-led-movimiento-4.png"
+    },
+    {
+        id: 3,
+        descripcion: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm",
+        categoria: "cocina",
+        precio: 4569,
+        stock: 3,
+        url: "../sources\images\categoria-cocina\bowls-acero-inoxidable\bowl-acero-inoxidable-2.png"
+    },
+    {
+        id: 4,
+        descripcion: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático",
+        categoria: "cocina",
+        precio: 3309,
+        stock: 3,
+        url: "../sources\images\categoria-cocina\cuchillo-hacha\cuchillo-hacha-hachuela-1.png"
+    },
+    {
+        id: 5,
+        descripcion: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica",
+        categoria: "vajilla",
+        precio: 3820,
+        stock: 4,
+        url: "../sources\images\categoria-vajilla\plato-rectangular-bandeja\plato-rectangular-bandeja-2.png"
+    },
+    {
+        id: 6,
+        descripcion: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería",
+        categoria: "cocina",
+        precio: 5727,
+        stock: 3,
+        url: "../sources\images\categoria-cocina\bandeja-rectangular-carniceria\bandeja-rectangular-carniceria-1.png"
+    },
+    {
+        id: 7,
+        descripcion: "Tijera Para Peluquería Canina Esquilar Ovejas Animales",
+        categoria: "herramientas",
+        precio: 4655,
+        stock: 4,
+        url: "../sources\images\categoria-herramientas\tijeras-esquilar\tijera-esquilar-1.png"
+    },
+    {
+        id: 8,
+        descripcion: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado",
+        categoria: "cocina",
+        precio: 3938,
+        stock: 3,
+        url: "../sources\images\categoria-cocina\set-cuchillos-pelapapa\set-cuchillos-pelapapa-1.png"
+    },
+    {
+        id: 9,
+        descripcion: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", categoria: "decoracion",
+        precio: 2037,
+        stock: 0,
+        url: "../sources\images\categoria-decoracion\luces-navidad-lluvia\luces-navidad-lluvia-1.png"
+    },
+    {
+        id: 10,
+        descripcion: "100 Luces Arroz Navidad Led Guirnalda X2 unidades",
+        categoria: "decoracion",
+        precio: 2000,
+        stock: 3,
+        url: "../sources\images\categoria-decoracion\luces-navidad-100-calidas\luces-navidad-100-calidas-1.png"
+    },
+    {
+        id: 11,
+        descripcion: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto",
+        categoria: "herramientas",
+        precio: 1299,
+        stock: 5,
+        url: "../sources\images\categoria-herramientas\limpia-vidrios\limpia-vidrios-rasqueta-2.png"
+    },
+    {
+        id: 12,
+        descripcion: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol",
+        categoria: "deportes",
+        precio: 3165,
+        stock: 5,
+        url: "../sources\images\categoria-deportes\navaja-tornasol-practica\navaja-tornasol-practica.png"
+    },
+    {
+        id: 13,
+        descripcion: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable",
+        categoria: "cocina",
+        precio: 1936,
+        stock: 4,
+        url: "../sources\images\categoria-cocina\prensa-francesa\prensa-francesa-2.png"
+    },
+    {
+        id: 14,
+        descripcion: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida",
+        categoria: "cocina",
+        precio: 7635,
+        stock: 4,
+        url: "../sources\images\categoria-cocina\cafetera-italiana\cafetera-italiana-2.png"
+    },
 ]
+
 
 
 /********************************

@@ -4,67 +4,279 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="icon" type="image/x-icon" href="../sources/logo/categoria-megazar.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/styles.css">
 	
 	<title>Megazar | Productos</title>
 </head>
 <body>
-	<header class="glass">
-		<div class="header__container">
-			<img class="chart__button" src="../sources/logo/chart-mediaq.png" alt="carrito">
-			<h1 class="logo"><a class="logo__link" href="../index.html">Megazar</a></h1>
-			<img id="hamburguer__button" class="hamburguer__button" src="../sources/logo/hamburger-button.png" alt="carrito">
-			<div class="menu__container">
-				<div class="menu__items--container">
-					<a class="menu__item" href="../index.html">Inicio</a>
-					<a class="menu__item active" href="#">Productos</a>
-					<a class="menu__item" href="contacto.html">Contacto</a>		
-				</div>
-				<div class="menu__icons--container">
-					<a class="menu__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><img src="../sources/logo/ig.png" alt="instagram-logo" class="menu__icon--img"></a>
-					<a class="menu__icon" href="https://megazar.mercadoshops.com.ar/" target="_blank"><img src="../sources/logo/mercado-libre-icon.png" alt="mercado-libre-icon" class="menu__icon--img"></a>
-					<a class="menu__icon" href="#"><img src="../sources/logo/chart.png" alt="chart-icon" class="menu__icon--img"></a>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!--Navbar-->
+	<header class=" header glass">
+        <div class="header__container">
+			<a href="#" class="prod__filter-btn" id="filter__button">
+				<i class="bi bi-filter-left chart__button"></i>
+			</a>
+            <h1 class="logo"><a class="logo__link" href="#">Megazar</a></h1>
+            <i id="hamburguer__button" class="bi bi-list hamburguer__button"></i>
+            <div class="menu__container">
+                <div class="menu__items--container">
+                    <a class="menu__item" href="../index.html">Inicio</a>
+                    <a class="menu__item active" href="#">Productos</a>
+                    <a class="menu__item" href="./contacto.html">Contacto</a>
+                </div>
+                <div class="menu__icons--container">
+                    <a class="menu__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><i class="bi bi-instagram menu__icon--img"></i></a>
+                    <a class="menu__icon" href="./carrito.html"><i class="bi bi-cart-fill menu__icon--img"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Navbar-->
 	<div id="navbar__container" class="navbar__container">
-    	<div id="navbar__header" class="navbar__header">
-			<img class="chart__button" src="../sources/logo/chart-mediaq.png" alt="carrito">
-			<h1 class="logo"><a class="logo__link" href="../index.html">Megazar</a></h1>
-			<img id="close__button" class="close__button" src="../sources/logo/close-button.png" alt="carrito">
-		</div>
-    	<div id="navbar__menu" class="navbar__menu">
-			<a class="navbar__items" href="../index.html">Inicio</a>
-			<a class="navbar__items active" href="#">Productos</a>
-			<a class="navbar__items" href="contacto.html">Contacto</a>		
-		</div>
-		<div class="navbar__footer">
-			<a class="navbar__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><img src="../sources/logo/ig.png" alt="instagram-logo" class="navbar__icon--img"></a>
-			<a class="navbar__icon" href="https://megazar.mercadoshops.com.ar/" target="_blank"><img src="../sources/logo/mercado-libre-icon.png" alt="mercado-libre-icon" class="navbar__icon--img"></a>
-		</div>
-  	</div>
-	<main>
-		<div class="main__container">
-			<div class="aside-bar">
-				<div class="search__container">
-					<input id="search__bar" class="search__bar" type="text" placeholder="Buscar...">
-					<button id="search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
-				</div>
-				<div class="filter__container">
-					
+        <div id="navbar__header" class="navbar__header">
+            <a href="./carrito.html">
+				<i class="bi bi-cart-fill chart__button"></i>
+			</a>
+            <h1 class="logo"><a class="logo__link" href="../index.html">Megazar</a></h1>
+            <i id="close__button" class="close__button bi bi-x-lg"></i>
+        </div>
+        <div id="navbar__menu" class="navbar__menu">
+            <a class="navbar__items" href="../index.html">Inicio</a>
+            <a class="navbar__items active" href="#">Productos</a>
+            <a class="navbar__items" href="./contacto.html">Contacto</a>		
+        </div>
+        <div class="navbar__footer">
+            <a class="navbar__icon" href="https://www.instagram.com/megazar.ok/" target="_blank"><i class="bi bi-instagram navbar__icon--img"></i></a>
+        </div>
+    </div>
+
+	<!-- Filter Bar -->
+	<div class="filterbar" id="filterbar">
+		<nav>
+			<ul class="filter__menu">
+				<li>
+					<button class="category__button active__btn"><i class="bi bi-arrow-right"></i> Todos los
+						productos</button>
+				</li>
+				<li>
+					<button class="category__button"><i class="bi bi-arrow-right"></i> Vajilla</button>
+				</li>
+				<li>
+					<button class="category__button"><i class="bi bi-arrow-right"></i> Cocina</button>
+				</li>
+				<li>
+					<button class="category__button"><i class="bi bi-arrow-right"></i> Decoracion</button>
+				</li>
+				<li>
+					<button class="category__button"><i class="bi bi-arrow-right"></i> Herramientas</button>
+				</li>
+				<li>
+					<button class="category__button"><i class="bi bi-arrow-right"></i> Deportes</button>
+				</li>
+				<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
+				
+			</ul>
+		</nav>
+	</div>
+
+	<main class="products__main">
+		<div class="wrapper">
+        
+			<aside class="prod__aside">
+				<nav>
+					<ul class="category__menu">
+						<li>
+							<button class="category__button active__btn"><i class="bi bi-arrow-right"></i> Todos los
+								productos</button>
+						</li>
+						<li>
+							<button class="category__button"><i class="bi bi-arrow-right"></i> Vajilla</button>
+						</li>
+						<li>
+							<button class="category__button"><i class="bi bi-arrow-right"></i> Cocina</button>
+						</li>
+						<li>
+							<button class="category__button"><i class="bi bi-arrow-right"></i> Decoracion</button>
+						</li>
+						<li>
+							<button class="category__button"><i class="bi bi-arrow-right"></i> Herramientas</button>
+						</li>
+						<li>
+							<button class="category__button"><i class="bi bi-arrow-right"></i> Deportes</button>
+						</li>
+						<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
+						
+					</ul>
+				</nav>
+			</aside>
+			<div class="prod__main">
+				<h2 class="prod__title">Todos los productos</h2>
+				<div class="prod__container">
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">Cuchillo Hacha</h3>
+							<p class="prod__item--price">$3000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
+					<div class="prod__item">
+						<img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="prod__item--img">
+						<div class="prod__item--description">
+							<h3 class="prod__item--title">100 Luces</h3>
+							<p class="prod__item--price">$2000</p>
+							<button class="prod__item--button">Agregar</button>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="products__container"></div>
-		</div>
-		<div class="development__container">
-			<h2 class="development__title">Lo sentimos, esta página aún se encuentra en desarrollo.</h2>
-			<img src="../sources/images/banners/banner-development.png" alt="development" class="development__img">
 		</div>
 	</main>
-	<footer>
+	<footer class="footer">
 		<div class="footer__container">
 			<div class="information__container">
 				<img src="../sources/logo/isologo-chico 2.png" alt="megazar-logo" class="information__logo">
