@@ -1,4 +1,4 @@
-/********************************
+/*******************************sources*
      3er Preentrega Proyecto
 ********************************/
 
@@ -12,7 +12,7 @@ const products = [
         categoria: "herramientas",
         precio: 6199,
         stock: 0,
-        url: "../sources\images\categoria-herramientas\lupa-plegable-luzled\lupa-plegable-led-1.png"
+        url:"../sources/images/categoria-herramientas/lupa-plegable-luzled/lupa-plegable-led-1.png"
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ const products = [
         categoria: "decoracion",
         precio: 6300,
         stock: 3,
-        url: "../sources\images\categoria-decoracion\velas-led-movimiento\velas-led-movimiento-4.png"
+        url: "../sources/images/categoria-decoracion/velas-led-movimiento/velas-led-movimiento-4.png"
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const products = [
         categoria: "cocina",
         precio: 4569,
         stock: 3,
-        url: "../sources\images\categoria-cocina\bowls-acero-inoxidable\bowl-acero-inoxidable-2.png"
+        url: "../sources/images/categoria-cocina/bowls-acero-inoxidable/bowl-acero-inoxidable-2.png"
     },
     {
         id: 4,
@@ -36,7 +36,7 @@ const products = [
         categoria: "cocina",
         precio: 3309,
         stock: 3,
-        url: "../sources\images\categoria-cocina\cuchillo-hacha\cuchillo-hacha-hachuela-1.png"
+        url: "../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png"
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ const products = [
         categoria: "vajilla",
         precio: 3820,
         stock: 4,
-        url: "../sources\images\categoria-vajilla\plato-rectangular-bandeja\plato-rectangular-bandeja-2.png"
+        url: "../sources/images/categoria-vajilla/plato-rectangular-bandeja/plato-rectangular-bandeja-2.png"
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const products = [
         categoria: "cocina",
         precio: 5727,
         stock: 3,
-        url: "../sources\images\categoria-cocina\bandeja-rectangular-carniceria\bandeja-rectangular-carniceria-1.png"
+        url: "../sources/images/categoria-cocina/bandeja-rectangular-carniceria/bandeja-rectangular-carniceria-1.png"
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const products = [
         categoria: "herramientas",
         precio: 4655,
         stock: 4,
-        url: "../sources\images\categoria-herramientas\tijeras-esquilar\tijera-esquilar-1.png"
+        url: "../sources/images/categoria-herramientas/tijeras-esquilar/tijera-esquilar-1.png"
     },
     {
         id: 8,
@@ -68,14 +68,14 @@ const products = [
         categoria: "cocina",
         precio: 3938,
         stock: 3,
-        url: "../sources\images\categoria-cocina\set-cuchillos-pelapapa\set-cuchillos-pelapapa-1.png"
+        url: "../sources/images/categoria-cocina/set-cuchillos-pelapapa/set-cuchillos-pelapapa-1.png"
     },
     {
         id: 9,
         descripcion: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", categoria: "decoracion",
         precio: 2037,
         stock: 0,
-        url: "../sources\images\categoria-decoracion\luces-navidad-lluvia\luces-navidad-lluvia-1.png"
+        url: "../sources/images/categoria-decoracion/luces-navidad-lluvia/luces-navidad-lluvia-1.png"
     },
     {
         id: 10,
@@ -83,7 +83,7 @@ const products = [
         categoria: "decoracion",
         precio: 2000,
         stock: 3,
-        url: "../sources\images\categoria-decoracion\luces-navidad-100-calidas\luces-navidad-100-calidas-1.png"
+        url: "../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png"
     },
     {
         id: 11,
@@ -91,7 +91,7 @@ const products = [
         categoria: "herramientas",
         precio: 1299,
         stock: 5,
-        url: "../sources\images\categoria-herramientas\limpia-vidrios\limpia-vidrios-rasqueta-2.png"
+        url: "../sources/images/categoria-herramientas/limpia-vidrios/limpia-vidrios-rasqueta-2.png"
     },
     {
         id: 12,
@@ -99,7 +99,7 @@ const products = [
         categoria: "deportes",
         precio: 3165,
         stock: 5,
-        url: "../sources\images\categoria-deportes\navaja-tornasol-practica\navaja-tornasol-practica.png"
+        url: "../sources/images/categoria-deportes/navaja-tornasol-practica/navaja-tornasol-practica.png"
     },
     {
         id: 13,
@@ -107,7 +107,7 @@ const products = [
         categoria: "cocina",
         precio: 1936,
         stock: 4,
-        url: "../sources\images\categoria-cocina\prensa-francesa\prensa-francesa-2.png"
+        url: "../sources/images/categoria-cocina/prensa-francesa/prensa-francesa-2.png"
     },
     {
         id: 14,
@@ -115,17 +115,36 @@ const products = [
         categoria: "cocina",
         precio: 7635,
         stock: 4,
-        url: "../sources\images\categoria-cocina\cafetera-italiana\cafetera-italiana-2.png"
+        url: "../sources/images/categoria-cocina/cafetera-italiana/cafetera-italiana-2.png"
     },
 ]
 
-
+const wrapper = document.getElementById('prod__container')
 
 /********************************
             Funciones
 ********************************/
 
+const loadProducts = () => {
+    products.forEach(element => {
 
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+        <div class="prod__item">
+			<img src="${element.url}" alt="${element.descripcion}" class="prod__item--img">
+			<div class="prod__item--description">
+				<h3 class="prod__item--title">${element.descripcion}</h3>
+				<p class="prod__item--price">$${element.precio}</p>
+				<button class="prod__item--button" id="producto__${element.id}">Agregar</button>
+			</div>
+		</div>
+        `
+        wrapper.append(div);
+    })
+}
+
+loadProducts();
 
 /********************************
             Eventos

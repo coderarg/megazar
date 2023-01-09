@@ -41,6 +41,7 @@ body {
 
 main {
     margin-top: 50px;
+    flex-grow: 1;
 }
 
 ul {
@@ -413,17 +414,19 @@ a {
     letter-spacing: 2px;
 }
 
-.location {
-    max-width: 1440px;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
+.location__container {
+    width: 100%;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
-.location img {
+.location__map {
+    max-width: 1440px;
+    height: 500px;
     width: 100%;
 }
+
 
 @media screen and (max-width: 1023px) {
 
@@ -457,6 +460,10 @@ a {
 /***********************************
         PRODUCTOS y CARRITO
 ************************************/
+
+.products__main {
+    background-color: var(--red-main);
+}
 
 .wrapper {
     width: 100%;
