@@ -121,6 +121,7 @@ const productos = [
 
 const wrapper = document.getElementById('prod__container');
 const botonesCategorias = document.querySelectorAll('.category__button');
+const botonesCategoriasFiltros = document.querySelectorAll('.filter__button');
 
 /********************************
             Funciones

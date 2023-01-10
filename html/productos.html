@@ -51,29 +51,29 @@
     </div>
 
 	<!-- Filter Bar -->
-	<div class="filterbar" id="filterbar">
+	<div class="filterbar">
 		<nav>
 			<ul class="filter__menu">
 				<li>
-					<button class="category__button active__btn"><i class="bi bi-arrow-right"></i> Todos los
+					<button class="category__button filter__button active__btn todos"><i class="bi bi-arrow-right"></i> Todos los
 						productos</button>
 				</li>
 				<li>
-					<button class="category__button"><i class="bi bi-arrow-right"></i> Vajilla</button>
+					<button class="category__button filter__button vajilla"><i class="bi bi-arrow-right"></i> Vajilla</button>
 				</li>
 				<li>
-					<button class="category__button"><i class="bi bi-arrow-right"></i> Cocina</button>
+					<button class="category__button filter__button cocina"><i class="bi bi-arrow-right"></i> Cocina</button>
 				</li>
 				<li>
-					<button class="category__button"><i class="bi bi-arrow-right"></i> Decoracion</button>
+					<button class="category__button filter__button decoracion"><i class="bi bi-arrow-right"></i> Decoracion</button>
 				</li>
 				<li>
-					<button class="category__button"><i class="bi bi-arrow-right"></i> Herramientas</button>
+					<button class="category__button filter__button herramientas"><i class="bi bi-arrow-right"></i> Herramientas</button>
 				</li>
 				<li>
-					<button class="category__button"><i class="bi bi-arrow-right"></i> Deportes</button>
+					<button class="category__button filter__button deportes"><i class="bi bi-arrow-right"></i> Deportes</button>
 				</li>
-				<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
+				<a class="category__cart filter__button category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
 				
 			</ul>
 		</nav>
@@ -82,11 +82,10 @@
 	<main class="products__main">
 		<div class="wrapper">
         
-			<aside class="prod__aside">
-				<nav>
+			<aside class="prod__aside" id="filterbar">
 					<ul class="category__menu">
 						<li>
-							<button id="todos" class="category__button active__btn"><i class="bi bi-arrow-right"></i> Todos los
+							<button id="todos" class="category__button active__btn "><i class="bi bi-arrow-right"></i> Todos los
 								productos</button>
 						</li>
 						<li>
@@ -107,7 +106,6 @@
 						<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number" >0</span></a>
 						
 					</ul>
-				</nav>
 			</aside>
 			<div class="prod__main">
 				<h2 class="prod__title">Todos los productos</h2>
