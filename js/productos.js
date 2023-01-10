@@ -133,16 +133,16 @@ const cargarProductos = (productosCategoria) => {
     productosCategoria.forEach(elemento => {
 
         const div = document.createElement("div");
+        div.classList.add("prod__item")
 
         div.innerHTML = `
-        <div class="prod__item">
 			<img src="${elemento.url}" alt="${elemento.descripcion}" class="prod__item--img">
 			<div class="prod__item--description">
 				<h3 class="prod__item--title">${elemento.descripcion}</h3>
 				<p class="prod__item--price">$${elemento.precio}</p>
 				<button class="prod__item--button" id="${elemento.id}">Agregar</button>
 			</div>
-		</div>
+		
         `
         
         wrapper.append(div);
