@@ -22,13 +22,14 @@
 }
 
 :root {
-    --red-main: #ff2929;
-    --red-dark: #7D1515;
-    --red-light: #FF5454;
-    --red-light-2: #F47B7B;
-    --grey-dark: #333333;
-    --grey-light: #766666;
-    --grey-light-2: #e6e6e6;
+    --red-main: #d90429;
+    --red-dark: #660708;
+    --red-light: #ef233c;
+    --red-light-2: #FF5454;
+    --black: #0B090A;
+    --grey-dark: #33373a;
+    --grey-light: #D3D3D3;
+    --grey-light-2: F5F3F4;
     --white-clean: #ffffff;
 }
 
@@ -205,7 +206,7 @@ a {
 
 .information__text {
     font-family: ErasBook;
-    color: var(--grey-light);
+    color: var(--grey-dark);
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
@@ -213,64 +214,6 @@ a {
 .created-by {
     text-align: right;
     margin-top: 100px;
-}
-
-
-@media screen and (max-width: 1023px) {
-    .header__container {
-        width: 90%;
-    }
-
-    .chart__button {
-        display: block;
-    }
-
-    .hamburguer__button {
-        display: block;
-    }
-
-    .logo {
-        font-size: 26px;
-        margin: 0;
-    }
-
-    .menu__container {
-        display: none;
-    }
-
-    .footer__container {
-        width: 90%;
-    }
-
-    .information__container {
-        width: auto;
-    }
-
-    .information__logo {
-        margin-bottom: 15px;
-    }
-
-    .information__title {
-        font-size: 14px;
-    }
-
-    .information__text {
-        font-size: 10px;
-    }
-
-
-    .created-by {
-        text-align: center;
-        font-size: 12px;
-        margin: 20px auto;
-    }
-}
-
-@media screen and (max-width: 320px) {
-
-    .information__logo {
-        width: 50px;
-    }
 }
 
 /***************NAVBAR**************/
@@ -324,7 +267,7 @@ a {
     margin: 20px auto;
     padding: 10px 20px;
     text-decoration: none;
-    color: var(--grey-light);
+    color: var(--grey-dark);
     cursor: default;
     border-radius: 5px;
 
@@ -340,7 +283,7 @@ a {
     margin: auto 5px;
     padding: 10px;
     text-decoration: none;
-    color: var(--grey-light);
+    color: var(--grey-dark);
     cursor: default;
     border-radius: 5px;
 }
@@ -423,39 +366,9 @@ a {
 
 .location__map {
     max-width: 1440px;
-    height: 500px;
+    height: 200px;
     width: 100%;
 }
-
-
-@media screen and (max-width: 1023px) {
-
-    .categoria__container {
-        width: 90%;
-        max-width: 1440px;
-        margin: 20px auto 50px auto;
-        flex-flow: row wrap;
-    }
-
-    .categoria__item--container {
-        width: 150px;
-    }
-
-    .categoria__item {
-        width: 100px;
-        height: 100px;
-    }
-
-    .categoria__icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .categoria__caption {
-        font-size: 14px;
-    }
-}
-
 
 /***********************************
         PRODUCTOS y CARRITO
@@ -476,7 +389,7 @@ a {
 .prod__aside {
     box-sizing: border-box;
     background-color: var(--red-main);
-    padding: 10rem 1rem 1rem 1rem;
+    padding: 3rem 1rem 1rem 1rem;
     padding-right: 0px;
     position: sticky;
     top: 0;
@@ -544,21 +457,22 @@ a {
 
 .prod__item {
     width: 200px;
+    height: 340px;
     min-width: 100px;
     margin: 20px;
     border-radius: 1rem 1rem 1rem 1rem;
     box-shadow: 0px 0px 5px var(--grey-light);
     text-align: center;
-
 }
 
 .prod__item--img {
     width: 100%;
+    height: 200px;
     border-radius: 1rem 1rem 0rem 0rem;
-    
 }
 
 .prod__item--description {
+    box-sizing: border-box;
     background-color: var(--red-light);
     color: var(--white-clean);
     border-radius: 0rem 0rem 1rem 1rem;
@@ -566,13 +480,14 @@ a {
     font-family: ErasBook;
     letter-spacing: 1px;
 
+    height: 140px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 }
 
 .prod__item--title {
     font-size: 0.85rem;
+    flex-grow: 1;
 }
 
 .prod__item--button {
@@ -592,6 +507,10 @@ a {
     transition: .5s;
 }
 
+.cart__container {
+    min-height: 400px;
+}
+
 .cart__empty, .cart__bought {
     color: var(--grey-light);
     font-size: 1.5rem;
@@ -600,7 +519,8 @@ a {
     font-family: ErasBook;
 }
 
-.bi-heartbreak-fill, .bi-emoji-laughing {
+.bi-heartbreak-fill, 
+.bi-emoji-laughing {
     color: var(--red-main);
 }
 
@@ -615,7 +535,6 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .cart__prod--img {
@@ -650,10 +569,10 @@ a {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
-
 }
 
-.cart__empty--btn, .cart__actions--buy-btn, .cart__actions--total-wrapper {
+.cart__empty--btn, .cart__actions--buy-btn, 
+.cart__actions--total-wrapper {
     border: none;
     background-color: var(--red-light);
     color: var(--white-clean);
@@ -700,55 +619,7 @@ a {
     display: none;
 }
 
-@media screen and (max-width: 1023px) {
-   
-    .category__back {
-        display: none;
-    }
 
-    .prod__aside {
-        display: none;
-    }
-
-    .wrapper {
-        display: block;
-        width: 100%;
-        margin: auto;
-        padding-top: 20px;
-    }
-
-    .prod__main {
-        width: 85%;
-        margin: auto;
-        padding: 5px;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-    }
-
-    .filterbar {
-        display: block;
-        width: 100%;
-        background-color: var(--red-main);
-        transition: 1s;
-
-        position: fixed;
-        top: -500px;
-        right: 0%;
-        z-index: 40;
-
-        align-items: center;
-    }
-
-    .filter__menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        margin: auto;
-    }
-
-}
 /***********************************
             CONTACTO
 ************************************/
@@ -802,7 +673,6 @@ a {
     color: var(--grey-light);
     font-size: 1rem;
     padding: .6em 0;
-    ;
     border: none;
     outline: none;
     border-bottom: 2px solid var(--red-light-2);
@@ -825,7 +695,6 @@ a {
     font-family: ErasBook;
     letter-spacing: 2px;
     font-size: 10px;
-
 }
 
 input[type="checkbox"] {
@@ -849,7 +718,6 @@ input[type="checkbox"] {
     font-size: 1em;
     letter-spacing: 2px;
     padding: 0.5em;
-
 }
 
 .form__submit:hover {
@@ -858,6 +726,148 @@ input[type="checkbox"] {
     transition: .5s;
 }
 
+
+/************Media Querys**************/
+
+/***************FOOTER**************/
+@media screen and (max-width: 1023px) {
+    .header__container {
+        width: 90%;
+    }
+
+    .chart__button {
+        display: block;
+    }
+
+    .hamburguer__button {
+        display: block;
+    }
+
+    .logo {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    .menu__container {
+        display: none;
+    }
+
+    .footer__container {
+        width: 90%;
+    }
+
+    .information__container {
+        width: auto;
+    }
+
+    .information__logo {
+        margin-bottom: 15px;
+    }
+
+    .information__title {
+        font-size: 14px;
+    }
+
+    .information__text {
+        font-size: 10px;
+    }
+
+
+    .created-by {
+        text-align: center;
+        font-size: 12px;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .information__logo {
+        width: 50px;
+    }
+}
+
+/***************INICIO**************/
+@media screen and (max-width: 1023px) {
+
+    .categoria__container {
+        width: 90%;
+        max-width: 1440px;
+        margin: 20px auto 50px auto;
+        flex-flow: row wrap;
+    }
+
+    .categoria__item--container {
+        width: 150px;
+    }
+
+    .categoria__item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .categoria__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .categoria__caption {
+        font-size: 14px;
+    }
+}
+
+/***************PRODUCTOS**************/
+@media screen and (max-width: 1023px) {
+   
+    .category__back {
+        display: none;
+    }
+
+    .prod__aside {
+        display: none;
+    }
+
+    .wrapper {
+        display: block;
+        width: 100%;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    .prod__main {
+        width: 85%;
+        margin: auto;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .filterbar {
+        display: block;
+        width: 100%;
+        background-color: var(--red-main);
+        transition: 1s;
+
+        position: fixed;
+        top: -500px;
+        right: 0%;
+        z-index: 40;
+
+        align-items: center;
+    }
+
+    .filter__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: auto;
+    }
+
+}
+
+/***************CONTACTO**************/
 @media screen and (max-width: 1023px) {
     .form {
         width: 90%;

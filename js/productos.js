@@ -1,13 +1,13 @@
-/*******************************sources*
+/********************************
      3er Preentrega Proyecto
 ********************************/
 
 /********************************
             Variables
 ********************************/
-const products = [
+const productos = [
     {
-        id: 1,
+        id: "producto__1",
         descripcion: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción",
         categoria: "herramientas",
         precio: 6199,
@@ -15,7 +15,7 @@ const products = [
         url:"../sources/images/categoria-herramientas/lupa-plegable-luzled/lupa-plegable-led-1.png"
     },
     {
-        id: 2,
+        id: "producto__2",
         descripcion: "Pack 6 Velas Led Con Llama Con Movimiento Realistas",
         categoria: "decoracion",
         precio: 6300,
@@ -23,7 +23,7 @@ const products = [
         url: "../sources/images/categoria-decoracion/velas-led-movimiento/velas-led-movimiento-4.png"
     },
     {
-        id: 3,
+        id: "producto__3",
         descripcion: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm",
         categoria: "cocina",
         precio: 4569,
@@ -31,7 +31,7 @@ const products = [
         url: "../sources/images/categoria-cocina/bowls-acero-inoxidable/bowl-acero-inoxidable-2.png"
     },
     {
-        id: 4,
+        id: "producto__4",
         descripcion: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático",
         categoria: "cocina",
         precio: 3309,
@@ -39,7 +39,7 @@ const products = [
         url: "../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png"
     },
     {
-        id: 5,
+        id: "producto__5",
         descripcion: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica",
         categoria: "vajilla",
         precio: 3820,
@@ -47,7 +47,7 @@ const products = [
         url: "../sources/images/categoria-vajilla/plato-rectangular-bandeja/plato-rectangular-bandeja-2.png"
     },
     {
-        id: 6,
+        id: "producto__6",
         descripcion: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería",
         categoria: "cocina",
         precio: 5727,
@@ -55,7 +55,7 @@ const products = [
         url: "../sources/images/categoria-cocina/bandeja-rectangular-carniceria/bandeja-rectangular-carniceria-1.png"
     },
     {
-        id: 7,
+        id: "producto__7",
         descripcion: "Tijera Para Peluquería Canina Esquilar Ovejas Animales",
         categoria: "herramientas",
         precio: 4655,
@@ -63,7 +63,7 @@ const products = [
         url: "../sources/images/categoria-herramientas/tijeras-esquilar/tijera-esquilar-1.png"
     },
     {
-        id: 8,
+        id: "producto__8",
         descripcion: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado",
         categoria: "cocina",
         precio: 3938,
@@ -71,14 +71,14 @@ const products = [
         url: "../sources/images/categoria-cocina/set-cuchillos-pelapapa/set-cuchillos-pelapapa-1.png"
     },
     {
-        id: 9,
+        id: "producto__9",
         descripcion: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", categoria: "decoracion",
         precio: 2037,
         stock: 0,
         url: "../sources/images/categoria-decoracion/luces-navidad-lluvia/luces-navidad-lluvia-1.png"
     },
     {
-        id: 10,
+        id: "producto__10",
         descripcion: "100 Luces Arroz Navidad Led Guirnalda X2 unidades",
         categoria: "decoracion",
         precio: 2000,
@@ -86,7 +86,7 @@ const products = [
         url: "../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png"
     },
     {
-        id: 11,
+        id: "producto__11",
         descripcion: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto",
         categoria: "herramientas",
         precio: 1299,
@@ -94,7 +94,7 @@ const products = [
         url: "../sources/images/categoria-herramientas/limpia-vidrios/limpia-vidrios-rasqueta-2.png"
     },
     {
-        id: 12,
+        id: "producto__12",
         descripcion: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol",
         categoria: "deportes",
         precio: 3165,
@@ -102,7 +102,7 @@ const products = [
         url: "../sources/images/categoria-deportes/navaja-tornasol-practica/navaja-tornasol-practica.png"
     },
     {
-        id: 13,
+        id: "producto__13",
         descripcion: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable",
         categoria: "cocina",
         precio: 1936,
@@ -110,7 +110,7 @@ const products = [
         url: "../sources/images/categoria-cocina/prensa-francesa/prensa-francesa-2.png"
     },
     {
-        id: 14,
+        id: "producto__14",
         descripcion: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida",
         categoria: "cocina",
         precio: 7635,
@@ -119,36 +119,63 @@ const products = [
     },
 ]
 
-const wrapper = document.getElementById('prod__container')
+const wrapper = document.getElementById('prod__container');
+const botonesCategorias = document.querySelectorAll('.category__button');
 
 /********************************
             Funciones
 ********************************/
 
-const loadProducts = () => {
-    products.forEach(element => {
+const cargarProductos = (productosCategoria) => {
+    wrapper.innerHTML = "";
+
+    productosCategoria.forEach(elemento => {
 
         const div = document.createElement("div");
 
         div.innerHTML = `
         <div class="prod__item">
-			<img src="${element.url}" alt="${element.descripcion}" class="prod__item--img">
+			<img src="${elemento.url}" alt="${elemento.descripcion}" class="prod__item--img">
 			<div class="prod__item--description">
-				<h3 class="prod__item--title">${element.descripcion}</h3>
-				<p class="prod__item--price">$${element.precio}</p>
-				<button class="prod__item--button" id="producto__${element.id}">Agregar</button>
+				<h3 class="prod__item--title">${elemento.descripcion}</h3>
+				<p class="prod__item--price">$${elemento.precio}</p>
+				<button class="prod__item--button" id="${elemento.id}">Agregar</button>
 			</div>
 		</div>
         `
+        
         wrapper.append(div);
     })
 }
 
-loadProducts();
+
 
 /********************************
             Eventos
 ********************************/
+
+cargarProductos(productos);
+
+botonesCategorias.forEach( boton => {
+
+    boton.addEventListener("click", (e) => {
+
+        botonesCategorias.forEach(boton => boton.classList.remove("active__btn"))
+
+        e.currentTarget.classList.add("active__btn");
+
+        const categoriaElegida = productos.filter(producto => producto.categoria == e.currentTarget.id)
+
+        if(e.currentTarget.id == "todos") {
+            cargarProductos(productos);
+        } else {
+            cargarProductos(categoriaElegida);
+        }
+
+    })
+    
+})
+
 
 /*  
 //BUSCADOR
