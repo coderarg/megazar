@@ -119,9 +119,12 @@ const productos = [
     },
 ]
 
-const wrapper = document.getElementById('prod__container');
-const botonesCategorias = document.querySelectorAll('.category__button');
-const botonesCategoriasFiltros = document.querySelectorAll('.filter__button');
+let wrapper = document.getElementById('prod__container');
+let botonesCategorias = document.querySelectorAll('.category__button');
+let botonesCategoriasFiltros = document.querySelectorAll('.filter__button');
+let prodTitle = document.querySelector('#prod__title');
+let btnAdd;
+const productosCarrito = [];
 
 /********************************
             Funciones
@@ -146,7 +149,11 @@ const cargarProductos = (productosCategoria) => {
         `
         
         wrapper.append(div);
+
     })
+
+    btnAdd = document.querySelectorAll('.prod__item--button');
+    console.log(btnAdd);
 }
 
 
@@ -170,8 +177,11 @@ botonesCategorias.forEach( boton => {
         if(e.currentTarget.id == "todos") {
             cargarProductos(productos);
         } else {
+            
             cargarProductos(categoriaElegida);
         }
+
+        prodTitle.innerText = e.currentTarget.textContent;
 
     })
     
