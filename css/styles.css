@@ -29,7 +29,7 @@
     --black: #0B090A;
     --grey-dark: #33373a;
     --grey-light: #D3D3D3;
-    --grey-light-2: F5F3F4;
+    --grey-light-2: #F5F3F4;
     --white-clean: #ffffff;
 }
 
@@ -51,6 +51,16 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+    width:.8rem;
+    background-color: var(--white-clean);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(white, white, var(--red-main), white, white);
+    border-radius: 100%;
 }
 
 /***********HEADER-MENU************/
@@ -838,8 +848,7 @@ input[type="checkbox"] {
 
     .wrapper {
         display: flex;
-        margin: auto;
-        padding-top: 1rem;
+        width: 100%;
     }
 
     
@@ -870,6 +879,7 @@ input[type="checkbox"] {
     }
     
     .prod__main {
+        width: 100%;
         margin: 1rem;
         padding: 5px;
         justify-content: start;

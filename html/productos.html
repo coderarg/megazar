@@ -50,61 +50,32 @@
         </div>
     </div>
 
-	<!-- Filter Bar -->
-	<div class="filterbar">
-		<nav>
-			<ul class="filter__menu">
-				<li>
-					<button class="category__button filter__button active__btn todos"><i class="bi bi-arrow-right"></i> Todos los
-						productos</button>
-				</li>
-				<li>
-					<button class="category__button filter__button vajilla"><i class="bi bi-arrow-right"></i> Vajilla</button>
-				</li>
-				<li>
-					<button class="category__button filter__button cocina"><i class="bi bi-arrow-right"></i> Cocina</button>
-				</li>
-				<li>
-					<button class="category__button filter__button decoracion"><i class="bi bi-arrow-right"></i> Decoracion</button>
-				</li>
-				<li>
-					<button class="category__button filter__button herramientas"><i class="bi bi-arrow-right"></i> Herramientas</button>
-				</li>
-				<li>
-					<button class="category__button filter__button deportes"><i class="bi bi-arrow-right"></i> Deportes</button>
-				</li>
-				<a class="category__cart filter__button category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
-				
-			</ul>
-		</nav>
-	</div>
-
 	<main class="products__main">
 		<div class="wrapper">
         
 			<aside class="prod__aside" id="filterbar">
 					<div class="category__menu">
 						
-						<button id="todos" class="category__button active__btn "><i class="bi bi-arrow-right"></i> Todos los productos</button>
+						<button id="all" class="category__button active__btn "><i class="bi bi-arrow-right"></i> Todos los productos</button>
 					
-						<button id="vajilla" class="category__button"><i class="bi bi-arrow-right"></i> Vajilla</button>
+						<button id="crockery" class="category__button"><i class="bi bi-arrow-right"></i> Vajilla</button>
 					
-						<button id="cocina" class="category__button"><i class="bi bi-arrow-right"></i> Cocina</button>
+						<button id="kitchen" class="category__button"><i class="bi bi-arrow-right"></i> Cocina</button>
 					
-						<button id="decoracion" class="category__button"><i class="bi bi-arrow-right"></i> Decoración</button>
+						<button id="decoration" class="category__button"><i class="bi bi-arrow-right"></i> Decoración</button>
 					
-						<button id="herramientas" class="category__button"><i class="bi bi-arrow-right"></i> Herramientas</button>
+						<button id="tools" class="category__button"><i class="bi bi-arrow-right"></i> Herramientas</button>
 	
-						<button id="deportes" class="category__button"><i class="bi bi-arrow-right"></i> Deportes</button>
+						<button id="sports" class="category__button"><i class="bi bi-arrow-right"></i> Deportes</button>
 						
-						<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito<span class="number">0</span></a>
+						<a class="category__cart category__button" href="./carrito.html"><i class="bi bi-cart-fill"></i> Carrito<span class="number" id="cart-number">0</span></a>
 						
 					</div>
 			</aside>
 			<div class="prod__main">
 				<h2 class="prod__title" id="prod__title">Todos los productos</h2>
 				<div class="prod__container" id="prod__container">
-					
+					<!--Carga de Productos Automática-->
 				</div>
 			</div>
 		</div>

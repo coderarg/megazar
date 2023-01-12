@@ -55,7 +55,7 @@
                             <a class="category__button category__back" href="./productos.html"><i class="bi bi-arrow-left"></i> Seguir Comprando</a>
                         </li>
                         <li>
-                            <a class="category__cart category__button active__btn" href="#"><i class="bi bi-cart-fill"></i> Carrito <span class="number">0</span></a>
+                            <a class="category__cart category__button active__btn" href="#"><i class="bi bi-cart-fill"></i> Carrito <span class="number" id="cart-number">0</span></a>
                         </li>
                     </ul>
             </aside>
@@ -63,54 +63,15 @@
                 <h2 class="prod__title">Carrito</h2>
                 <div class="cart__container">
     
-                    <p class="cart__empty">Tu carrito está vacío <i class="bi bi-heartbreak-fill"></i></p>
+                    <p class="cart__empty" id="text-cart-empty">Tu carrito está vacío <i class="bi bi-heartbreak-fill"></i></p>
     
-                    <div class="cart__prod--wrapper">
-                        <div class="cart__prod--item">
-                            <img src="../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png" alt="" class="cart__prod--img">
-                            <div class="cart__prod--title--wrapper">
-                                <h5 class="cart__prod--title">Nombre</h5>
-                                <h3 class="cart__prod--text">Cuchillo</h3>
-                            </div>
-                            <div class="cart__prod--cant-wrapper">
-                                <h5 class="cart__prod--title">Cantidad</h5>
-                                <h3 class="cart__prod--text">1</h3>
-                            </div>
-                            <div class="cart__prod--price-wrapper">
-                                <h5 class="cart__prod--title">Precio</h5>
-                                <h3 class="cart__prod--text">$3000</h3>
-                            </div>
-                            <div class="cart__prod--subt-wrapper">
-                                <h5 class="cart__prod--title">Subtotal</h5>
-                                <h3 class="cart__prod--text">$3000</h3>
-                            </div>
-                            <button class="cart__prod--delete-btn"><i class="bi bi-trash delete-button"></i></button>
-                        </div>
-                        <div class="cart__prod--item">
-                            <img src="../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png" alt="" class="cart__prod--img">
-                            <div class="cart__prod--title--wrapper">
-                                <h5 class="cart__prod--title">Nombre</h5>
-                                <h3 class="cart__prod--text">100 Luces</h3>
-                            </div>
-                            <div class="cart__prod--cant-wrapper">
-                                <h5 class="cart__prod--title">Cantidad</h5>
-                                <h3 class="cart__prod--text">1</h3>
-                            </div>
-                            <div class="cart__prod--price-wrapper">
-                                <h5 class="cart__prod--title">Precio</h5>
-                                <h3 class="cart__prod--text">$2000</h3>
-                            </div>
-                            <div class="cart__prod--subt-wrapper">
-                                <h5 class="cart__prod--title">Subtotal</h5>
-                                <h3 class="cart__prod--text">$2000</h3>
-                            </div>
-                            <button class="cart__prod--delete-btn"><i class="bi bi-trash delete-button"></i></button>
-                        </div>
+                    <div class="cart__prod--wrapper disable" id="cart__prod--container">
+                        <!--Carga de Productos Automática-->
                     </div>
     
-                    <div class="cart__actions disable">
+                    <div class="cart__actions disable"  id="cart__actions--container">
                         <div class="cart__actions--left">
-                            <button class="cart__empty--btn">Vaciar carrito</button>
+                            <button class="cart__empty--btn" id="cart__empty--btn">Vaciar carrito</button>
                         </div>
                         
                         <div class="cart__actions--right">
@@ -122,7 +83,7 @@
                         </div>
                     </div>
 
-                    <p class="cart__bought disable">Muchas gracias por tu compra <i class="bi bi-emoji-laughing"></i></p>
+                    <p class="cart__bought disable" id="text__cart--bougth">Muchas gracias por tu compra <i class="bi bi-emoji-laughing"></i></p>
                 </div>
             </div>
         </div>
@@ -144,6 +105,6 @@
 		</div>
 	</footer>
     <script src="../js/navbar.js"></script>
-    <script src="../js/productos.js"></script>
+    <script src="../js/carrito.js"></script>
 </body>
 </html>

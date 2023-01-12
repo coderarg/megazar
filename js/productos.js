@@ -1,191 +1,277 @@
 /********************************
-     3er Preentrega Proyecto
-********************************/
-
-/********************************
             Variables
 ********************************/
-const productos = [
+const products = [
     {
-        id: "producto__1",
-        descripcion: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción",
-        categoria: "herramientas",
-        precio: 6199,
+        id: "product__1",
+        description: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción",
+        category: "tools",
+        price: 6199,
         stock: 0,
-        url:"../sources/images/categoria-herramientas/lupa-plegable-luzled/lupa-plegable-led-1.png"
+        url:"../sources/images/categoria-herramientas/lupa-plegable-luzled/lupa-plegable-led-1.png",
+        quantity: 1
     },
     {
-        id: "producto__2",
-        descripcion: "Pack 6 Velas Led Con Llama Con Movimiento Realistas",
-        categoria: "decoracion",
-        precio: 6300,
+        id: "product__2",
+        description: "Pack 6 Velas Led Con Llama Con Movimiento Realistas",
+        category: "decoration",
+        price: 6300,
         stock: 3,
-        url: "../sources/images/categoria-decoracion/velas-led-movimiento/velas-led-movimiento-4.png"
+        url: "../sources/images/categoria-decoracion/velas-led-movimiento/velas-led-movimiento-4.png",
+        quantity: 1
     },
     {
-        id: "producto__3",
-        descripcion: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm",
-        categoria: "cocina",
-        precio: 4569,
+        id: "product__3",
+        description: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm",
+        category: "kitchen",
+        price: 4569,
         stock: 3,
-        url: "../sources/images/categoria-cocina/bowls-acero-inoxidable/bowl-acero-inoxidable-2.png"
+        url: "../sources/images/categoria-cocina/bowls-acero-inoxidable/bowl-acero-inoxidable-2.png",
+        quantity: 1
     },
     {
-        id: "producto__4",
-        descripcion: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático",
-        categoria: "cocina",
-        precio: 3309,
+        id: "product__4",
+        description: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático",
+        category: "kitchen",
+        price: 3309,
         stock: 3,
-        url: "../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png"
+        url: "../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png",
+        quantity: 1
     },
     {
-        id: "producto__5",
-        descripcion: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica",
-        categoria: "vajilla",
-        precio: 3820,
+        id: "product__5",
+        description: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica",
+        category: "crockery",
+        price: 3820,
         stock: 4,
-        url: "../sources/images/categoria-vajilla/plato-rectangular-bandeja/plato-rectangular-bandeja-2.png"
+        url: "../sources/images/categoria-vajilla/plato-rectangular-bandeja/plato-rectangular-bandeja-2.png",
+        quantity: 1
     },
     {
-        id: "producto__6",
-        descripcion: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería",
-        categoria: "cocina",
-        precio: 5727,
+        id: "product__6",
+        description: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería",
+        category: "kitchen",
+        price: 5727,
         stock: 3,
-        url: "../sources/images/categoria-cocina/bandeja-rectangular-carniceria/bandeja-rectangular-carniceria-1.png"
+        url: "../sources/images/categoria-cocina/bandeja-rectangular-carniceria/bandeja-rectangular-carniceria-1.png",
+        quantity: 1
     },
     {
-        id: "producto__7",
-        descripcion: "Tijera Para Peluquería Canina Esquilar Ovejas Animales",
-        categoria: "herramientas",
-        precio: 4655,
+        id: "product__7",
+        description: "Tijera Para Peluquería Canina Esquilar Ovejas Animales",
+        category: "tools",
+        price: 4655,
         stock: 4,
-        url: "../sources/images/categoria-herramientas/tijeras-esquilar/tijera-esquilar-1.png"
+        url: "../sources/images/categoria-herramientas/tijeras-esquilar/tijera-esquilar-1.png",
+        quantity: 1
     },
     {
-        id: "producto__8",
-        descripcion: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado",
-        categoria: "cocina",
-        precio: 3938,
+        id: "product__8",
+        description: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado",
+        category: "kitchen",
+        price: 3938,
         stock: 3,
-        url: "../sources/images/categoria-cocina/set-cuchillos-pelapapa/set-cuchillos-pelapapa-1.png"
+        url: "../sources/images/categoria-cocina/set-cuchillos-pelapapa/set-cuchillos-pelapapa-1.png",
+        quantity: 1
     },
     {
-        id: "producto__9",
-        descripcion: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", categoria: "decoracion",
-        precio: 2037,
+        id: "product__9",
+        description: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", 
+        category: "decoration",
+        price: 2037,
         stock: 0,
-        url: "../sources/images/categoria-decoracion/luces-navidad-lluvia/luces-navidad-lluvia-1.png"
+        url: "../sources/images/categoria-decoracion/luces-navidad-lluvia/luces-navidad-lluvia-1.png",
+        quantity: 1
     },
     {
-        id: "producto__10",
-        descripcion: "100 Luces Arroz Navidad Led Guirnalda X2 unidades",
-        categoria: "decoracion",
-        precio: 2000,
+        id: "product__10",
+        description: "100 Luces Arroz Navidad Led Guirnalda X2 unidades",
+        category: "decoration",
+        price: 2000,
         stock: 3,
-        url: "../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png"
+        url: "../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png",
+        quantity: 1
     },
     {
-        id: "producto__11",
-        descripcion: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto",
-        categoria: "herramientas",
-        precio: 1299,
+        id: "product__11",
+        description: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto",
+        category: "tools",
+        price: 1299,
         stock: 5,
-        url: "../sources/images/categoria-herramientas/limpia-vidrios/limpia-vidrios-rasqueta-2.png"
+        url: "../sources/images/categoria-herramientas/limpia-vidrios/limpia-vidrios-rasqueta-2.png",
+        quantity: 1
     },
     {
-        id: "producto__12",
-        descripcion: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol",
-        categoria: "deportes",
-        precio: 3165,
+        id: "product__12",
+        description: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol",
+        category: "sports",
+        price: 3165,
         stock: 5,
-        url: "../sources/images/categoria-deportes/navaja-tornasol-practica/navaja-tornasol-practica.png"
+        url: "../sources/images/categoria-deportes/navaja-tornasol-practica/navaja-tornasol-practica.png",
+        quantity: 1
     },
     {
-        id: "producto__13",
-        descripcion: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable",
-        categoria: "cocina",
-        precio: 1936,
+        id: "product__13",
+        description: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable",
+        category: "kitchen",
+        price: 1936,
         stock: 4,
-        url: "../sources/images/categoria-cocina/prensa-francesa/prensa-francesa-2.png"
+        url: "../sources/images/categoria-cocina/prensa-francesa/prensa-francesa-2.png",
+        quantity: 1
     },
     {
-        id: "producto__14",
-        descripcion: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida",
-        categoria: "cocina",
-        precio: 7635,
+        id: "product__14",
+        description: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida",
+        category: "kitchen",
+        price: 7635,
         stock: 4,
-        url: "../sources/images/categoria-cocina/cafetera-italiana/cafetera-italiana-2.png"
+        url: "../sources/images/categoria-cocina/cafetera-italiana/cafetera-italiana-2.png",
+        quantity: 1
     },
 ]
 
+//DOM
+
+let filterbar = document.getElementById("filterbar");
+let filterButton = document.getElementById("filter__button");
+
 let wrapper = document.getElementById('prod__container');
-let botonesCategorias = document.querySelectorAll('.category__button');
-let botonesCategoriasFiltros = document.querySelectorAll('.filter__button');
+let categoryButtons = document.querySelectorAll('.category__button');
 let prodTitle = document.querySelector('#prod__title');
+let cartNumber = document.querySelector('#cart-number');
+
+//Storage
+const cartProductsStorage = JSON.parse(localStorage.getItem("cart-products"));
+
+//Variables & Arrays
 let btnAdd;
-const productosCarrito = [];
+let cartProducts = [];
+let filterActive = true;
+
+
 
 /********************************
-            Funciones
+            Functions
 ********************************/
 
-const cargarProductos = (productosCategoria) => {
+const loadProducts = (productsCategory) => {
     wrapper.innerHTML = "";
 
-    productosCategoria.forEach(elemento => {
+    productsCategory.forEach(element => {
 
         const div = document.createElement("div");
         div.classList.add("prod__item")
 
         div.innerHTML = `
-			<img src="${elemento.url}" alt="${elemento.descripcion}" class="prod__item--img">
+			<img src="${element.url}" alt="${element.description}" class="prod__item--img">
 			<div class="prod__item--description">
-				<h3 class="prod__item--title">${elemento.descripcion}</h3>
-				<p class="prod__item--price">$${elemento.precio}</p>
-				<button class="prod__item--button" id="${elemento.id}">Agregar</button>
+				<h3 class="prod__item--title">${element.description}</h3>
+				<p class="prod__item--price">$${element.price}</p>
+				<button class="prod__item--button" id="${element.id}">Agregar</button>
 			</div>
 		
         `
-        
         wrapper.append(div);
 
     })
 
+    loadAddBtns();
+}
+
+const loadAddBtns = () => {
+
     btnAdd = document.querySelectorAll('.prod__item--button');
-    console.log(btnAdd);
+    
+    btnAdd.forEach(btn => {
+        btn.addEventListener('click', addToCart);
+    })
 }
 
 
+const addToCart = (e) => {
+    let prodToAdd = products.find((element) => {
+        return element.id == e.currentTarget.id;
+    })
+
+    if(cartProducts.some(prod => prod.id == prodToAdd.id)){
+        let index = cartProducts.findIndex(product => product.id == prodToAdd.id);
+        cartProducts[index].quantity++;
+
+    }else{
+        prodToAdd.quantity = 1;
+        cartProducts.push(prodToAdd);
+        
+    }
+
+    loadNumberCart();
+    
+    localStorage.setItem('cart-products', JSON.stringify(cartProducts))
+}
+
+const loadNumberCart = () => {
+    let quantityCart = cartProducts.reduce((sum, element) => sum + element.quantity, 0);
+    cartNumber.innerText = quantityCart;
+}
+
 
 /********************************
-            Eventos
+            Events
 ********************************/
 
-cargarProductos(productos);
+//Filter Bar
+filterButton.addEventListener("click", openFilter = (e) => {
+    e.preventDefault
+  
+  
+    if(filterActive == true)
+    {filterbar.style.top = "50px";
+      filterActive = false;
+    }else{
+      filterbar.style.top = "-500px";
+      filterActive = true;
+    }
+  
+})
 
-botonesCategorias.forEach( boton => {
+//Load Products
+loadProducts(products);
 
-    boton.addEventListener("click", (e) => {
+categoryButtons.forEach( button => {
 
-        botonesCategorias.forEach(boton => boton.classList.remove("active__btn"))
+    button.addEventListener("click", (e) => {
+
+        categoryButtons.forEach(button => button.classList.remove("active__btn"))
 
         e.currentTarget.classList.add("active__btn");
 
-        const categoriaElegida = productos.filter(producto => producto.categoria == e.currentTarget.id)
-
-        if(e.currentTarget.id == "todos") {
-            cargarProductos(productos);
-        } else {
-            
-            cargarProductos(categoriaElegida);
-        }
-
+        const choosenCategory = products.filter(prod => prod.category == e.currentTarget.id)
+        
         prodTitle.innerText = e.currentTarget.textContent;
+        
+        (e.currentTarget.id == "all") ? loadProducts(products) : loadProducts(choosenCategory);
+
+        filterbar.style.top = "-500px";
+        filterActive = true;
 
     })
     
 })
+
+if(cartProductsStorage) {
+    cartProducts = [...cartProductsStorage];
+    loadNumberCart();
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*  
@@ -209,13 +295,13 @@ const buscarPalabras = () => {
     
     palabrasBuscadas.forEach((palabra)=>{
         let resultadoParcial = products.filter((prodItem) => {
-            return prodItem.descripcion.toLowerCase().includes(palabra);
+            return prodItem.description.toLowerCase().includes(palabra);
         })
         resultado.push(...resultadoParcial);
     }) 
 }
 
-//ORDEN DE PRODUCTOS POR PRECIO
+//ORDEN DE PRODUCTOS POR price
 
 //Hago Backup de productos, ya que sort es un prosedimiento destructivo.
 
@@ -238,10 +324,10 @@ const sortProducts = (order) => {
 
     if(order == "asc"){
         productsBackup.sort((a, b) => {
-            if(a.precio > b.precio){
+            if(a.price > b.price){
                 return 1;
             }
-            if(a.precio < b.precio){
+            if(a.price < b.price){
                 return -1;
             }
             
@@ -250,10 +336,10 @@ const sortProducts = (order) => {
         })
     }else if(order == "desc") {
         productsBackup.sort((a, b) => {
-            if(a.precio > b.precio){
+            if(a.price > b.price){
                 return -1;
             }
-            if(a.precio < b.precio){
+            if(a.price < b.price){
                 return 1;
             }
             
@@ -293,9 +379,9 @@ switch(option){
         console.log("El resultado de búsqueda con duplicados es:")
         console.table(resultado);
         // Como esto puede dar duplicados cuando se ingresan dos palabras iguales, o que un producto contenga dos palabras buscadas.
-        const resultadoFiltrado = resultado.reduce((acumulador, elemento) => {
-        if(!acumulador.find(dato => dato.descripcion == elemento.descripcion)) {
-            acumulador.push(elemento);
+        const resultadoFiltrado = resultado.reduce((acumulador, element) => {
+        if(!acumulador.find(dato => dato.description == element.description)) {
+            acumulador.push(element);
         }
         return acumulador;
         }, [])
