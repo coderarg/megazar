@@ -8,25 +8,28 @@ let textCartEmpty = document.querySelector('#text-cart-empty');
 let textCartBougth = document.querySelector('#text__cart--bougth')
 let actionsContainer = document.querySelector('#cart__actions--container');
 let buttonEmpty = document.querySelector('#cart__empty--btn');
+let buttonBuy = document.querySelector('#cart-buy-btn');
+let totalPrice = document.querySelector('#cart-total-price');
 
 //Storage
 const cartProductsStorage = JSON.parse(localStorage.getItem("cart-products"));
 
 //Variables & Arrays
 let buttonsDelete;
+let subTotalPrice = 0;
 
 /********************************
             Functions
 ********************************/
-const cargarProductos = () => {
-    if(cartProductsStorage) {
+const loadProducts = () => {
+    if(cartProductsStorage && cartProductsStorage.length > 0) {
+        
+        productsContainer.innerHTML = "";
         textCartEmpty.classList.add('disable');
         actionsContainer.classList.remove('disable');
         textCartBougth.classList.add('disable');
         productsContainer.classList.remove('disable');
-    
-        productsContainer.innerHTML = "";
-    
+        
         cartProductsStorage.forEach(element => {
             
             const div = document.createElement('div');
@@ -56,11 +59,12 @@ const cargarProductos = () => {
         })
     
         loadDeleteBtns();
+        sumTotal();
     
     }else {
         textCartEmpty.classList.remove('disable');
         actionsContainer.classList.add('disable');
-        productsContainer.classList.remove('disable');
+        productsContainer.classList.add('disable');
     }
 
 }
@@ -74,10 +78,51 @@ const loadDeleteBtns = () => {
     })
 }
 
-const deleteElement = () => {
+const deleteElement = (e) => {
 
+    let indexDelete = cartProductsStorage.findIndex((element) => element.id == e.currentTarget.id)
+
+    cartProductsStorage.splice(indexDelete, 1)
+
+    localStorage.setItem('cart-products', JSON.stringify(cartProductsStorage));
+
+    loadProducts();
+    
+}
+
+const sumTotal = () => {
+
+    subTotalPrice = 0;
+    cartProductsStorage.forEach(element => {
+        subTotalPrice += element.price*element.quantity;
+    })
+
+    totalPrice.innerText = `$${subTotalPrice}`;
+
+}
+
+const emptyCart = (e) => {
+    cartProductsStorage.length = 0;
+
+    localStorage.setItem('cart-products', JSON.stringify(cartProductsStorage));
+    loadProducts();
+}
+
+const buyCart = (e) => {
+    cartProductsStorage.length = 0;
+
+    localStorage.setItem('cart-products', JSON.stringify(cartProductsStorage));
+
+    textCartEmpty.classList.add('disable');
+    actionsContainer.classList.add('disable');
+    textCartBougth.classList.remove('disable');
+    productsContainer.classList.add('disable');
 }
 
 /********************************
             Events
 ********************************/
+loadProducts();
+
+buttonEmpty.addEventListener('click', emptyCart);
+buttonBuy.addEventListener('click', buyCart);
