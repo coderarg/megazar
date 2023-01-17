@@ -657,11 +657,12 @@ body::-webkit-scrollbar-thumb {
 
 .contact__img {
     width: 100%;
+    max-width: 550px;
 }
 
 .form {
     margin: 0 10px 50px 10px;
-    width: 40%;
+    width: 100%;
     max-width: 400px;
     border-radius: 10px;
     text-align: center;
@@ -677,22 +678,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 .form__container {
-    margin-top: 3em;
-    display: grid;
-    gap: 2em;
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 .form__group {
     position: relative;
-
+    border: none;
+    width: 100%;
 }
 
 .form__input {
     width: 100%;
     background: none;
-    color: var(--grey-light);
+    color: var(--grey-dark);
     font-size: 1rem;
     padding: .6em 0;
+    margin-bottom: 1.5rem;
     border: none;
     outline: none;
     border-bottom: 2px solid var(--red-light-2);
@@ -738,6 +742,7 @@ input[type="checkbox"] {
     font-size: 1em;
     letter-spacing: 2px;
     padding: 0.5em;
+    margin-top: 1rem;
 }
 
 .form__submit:hover {

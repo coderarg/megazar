@@ -1,90 +1,60 @@
 /********************************
             Clases
 ********************************/
-//Creo la clase de Contacto
 class Contacto {
-  constructor(fname, email, phone, category, message, formOK) {
-    this.fname = fname,
-    this.email = email,
-    this.phone = phone,
-    this.category = category,
-    this.message = message,
-    this.formOK = formOK
-  }
+    constructor(fname, email, phone, category, message, formOK) {
+        this.fname = fname,
+            this.email = email,
+            this.phone = phone,
+            this.category = category,
+            this.message = message,
+            this.formOK = formOK
+    }
 };
 
 /********************************
             Variables
 ********************************/
 
-//Declaro variables globales
-let submitButtonInput = document.getElementById('form__submit');
+//DOM
 
-//Array Donde guardaré todos los contactos
-const contactos = [];
+const $form = document.querySelector("#form");
 
 
 /********************************
             Funciones
 ********************************/
 
-const tomarDatos = () => {
+async function handleSubmit(e) {
 
-  let fullNameInput = document.getElementById('fullName').value;
-  let emailInput = document.getElementById('email').value;
-  let phoneInput = document.getElementById('phone').value;
-  let categoryInput = document.getElementById('category').value;
-  let questionInput = document.getElementById('question').value;
-  let checkTermsInput = document.getElementById('form-ok').value;
-    
-  const newContacto = new Contacto(fullNameInput, emailInput, phoneInput, categoryInput, questionInput, checkTermsInput, submitButtonInput);
+    e.preventDefault();
 
-  contactos.push(newContacto);
+    const formData = new FormData($form);
 
-}
-
-
-
-const cargaSessionStorage = () => {
-
-  let recuperoParcial;
-  recuperoParcial = JSON.parse(sessionStorage.getItem('contactos'));
-
-  if(recuperoParcial) {
-    for(contacto of recuperoParcial) {
-      
-      contactos.push(contacto);
+    const response = await fetch(this.action, {
+        method: this.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    if (response.ok) {
+        mensaje();
     }
-  }
-
-  sessionStorage.setItem('contactos', JSON.stringify(contactos));
-
 }
 
-const descargaSessionStorage = () => {
-
-  let contactosRecuperados = JSON.parse(sessionStorage.getItem('contactos'));
-
+const mensaje = () => {
+    Swal.fire(
+        'Gracias!',
+        'Tus datos se han enviado correctamente'
+    )
 }
+
 
 /********************************
             Eventos
 ********************************/
 
-submitButtonInput.addEventListener('click', (e) => {
-  
-  e.preventDefault();
+$form.addEventListener('submit', handleSubmit);
 
-  tomarDatos();
-
-  cargaSessionStorage();
-  descargaSessionStorage();
-
-
-  Swal.fire(
-    'Gracias!',
-    'Tus datos se han enviado correctamente'
-  )
-
-});
 
