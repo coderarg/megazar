@@ -1,135 +1,6 @@
 /********************************
             Variables
 ********************************/
-const products = [
-    {
-        id: "product__1",
-        description: "Lupa Plegable Luz 10 Led Manicura Pedicura Multifunción",
-        category: "tools",
-        price: 6199,
-        stock: 0,
-        url:"../sources/images/categoria-herramientas/lupa-plegable-luzled/lupa-plegable-led-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__2",
-        description: "Pack 6 Velas Led Con Llama Con Movimiento Realistas",
-        category: "decoration",
-        price: 6300,
-        stock: 3,
-        url: "../sources/images/categoria-decoracion/velas-led-movimiento/velas-led-movimiento-4.png",
-        quantity: 1
-    },
-    {
-        id: "product__3",
-        description: "Set 10 Bowls Cocina Acero Inoxidable Ensaladera 21 Cm",
-        category: "kitchen",
-        price: 4569,
-        stock: 3,
-        url: "../sources/images/categoria-cocina/bowls-acero-inoxidable/bowl-acero-inoxidable-2.png",
-        quantity: 1
-    },
-    {
-        id: "product__4",
-        description: "Cuchillo Hacha Hachuela Carnicero Chef Estilo Asiático",
-        category: "kitchen",
-        price: 3309,
-        stock: 3,
-        url: "../sources/images/categoria-cocina/cuchillo-hacha/cuchillo-hacha-hachuela-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__5",
-        description: "Plato Rectangular Curvo Diseño Bandeja Picada Cerámica",
-        category: "crockery",
-        price: 3820,
-        stock: 4,
-        url: "../sources/images/categoria-vajilla/plato-rectangular-bandeja/plato-rectangular-bandeja-2.png",
-        quantity: 1
-    },
-    {
-        id: "product__6",
-        description: "Set 6 Bandeja Rectangular Heladera Pollería Carnicería",
-        category: "kitchen",
-        price: 5727,
-        stock: 3,
-        url: "../sources/images/categoria-cocina/bandeja-rectangular-carniceria/bandeja-rectangular-carniceria-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__7",
-        description: "Tijera Para Peluquería Canina Esquilar Ovejas Animales",
-        category: "tools",
-        price: 4655,
-        stock: 4,
-        url: "../sources/images/categoria-herramientas/tijeras-esquilar/tijera-esquilar-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__8",
-        description: "Set Cuchillos Acero Inoxidable con Pela Papa Cerámico Marmolado",
-        category: "kitchen",
-        price: 3938,
-        stock: 3,
-        url: "../sources/images/categoria-cocina/set-cuchillos-pelapapa/set-cuchillos-pelapapa-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__9",
-        description: "Set 100 Luces Led Lluvia Navidad Guirnalda Navideña A Pila", 
-        category: "decoration",
-        price: 2037,
-        stock: 0,
-        url: "../sources/images/categoria-decoracion/luces-navidad-lluvia/luces-navidad-lluvia-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__10",
-        description: "100 Luces Arroz Navidad Led Guirnalda X2 unidades",
-        category: "decoration",
-        price: 2000,
-        stock: 3,
-        url: "../sources/images/categoria-decoracion/luces-navidad-100-calidas/luces-navidad-100-calidas-1.png",
-        quantity: 1
-    },
-    {
-        id: "product__11",
-        description: "Seca Limpia Vidrios Rasqueta Plástica Mango Corto",
-        category: "tools",
-        price: 1299,
-        stock: 5,
-        url: "../sources/images/categoria-herramientas/limpia-vidrios/limpia-vidrios-rasqueta-2.png",
-        quantity: 1
-    },
-    {
-        id: "product__12",
-        description: "Chuchillo Navaja Mariposa Practica Sin Filo Tornasol",
-        category: "sports",
-        price: 3165,
-        stock: 5,
-        url: "../sources/images/categoria-deportes/navaja-tornasol-practica/navaja-tornasol-practica.png",
-        quantity: 1
-    },
-    {
-        id: "product__13",
-        description: "Cafetera Prensa Francesa de Embolo Vidrio y Acero Inoxidable",
-        category: "kitchen",
-        price: 1936,
-        stock: 4,
-        url: "../sources/images/categoria-cocina/prensa-francesa/prensa-francesa-2.png",
-        quantity: 1
-    },
-    {
-        id: "product__14",
-        description: "Cafetera Italiana Moka Expresso 3 Pocillos Aluminio Pulida",
-        category: "kitchen",
-        price: 7635,
-        stock: 4,
-        url: "../sources/images/categoria-cocina/cafetera-italiana/cafetera-italiana-2.png",
-        quantity: 1
-    },
-]
-
 //DOM
 
 let filterbar = document.getElementById("filterbar");
@@ -144,10 +15,10 @@ let cartNumber = document.querySelector('#cart-number');
 const cartProductsStorage = JSON.parse(localStorage.getItem("cart-products"));
 
 //Variables & Arrays
+let products;
 let btnAdd;
 let cartProducts = [];
 let filterActive = true;
-
 
 
 /********************************
@@ -184,11 +55,14 @@ const loadAddBtns = () => {
     
     btnAdd.forEach(btn => {
         btn.addEventListener('click', addToCart);
+        btn.addEventListener('click', notification);
+
     })
 }
 
 
 const addToCart = (e) => {
+
     let prodToAdd = products.find((element) => {
         return element.id == e.currentTarget.id;
     })
@@ -196,45 +70,71 @@ const addToCart = (e) => {
     if(cartProducts.some(prod => prod.id == prodToAdd.id)){
         let index = cartProducts.findIndex(product => product.id == prodToAdd.id);
         cartProducts[index].quantity++;
-
     }else{
         prodToAdd.quantity = 1;
-        cartProducts.push(prodToAdd);
-        
+        cartProducts.push(prodToAdd); 
     }
 
     loadNumberCart();
     
     localStorage.setItem('cart-products', JSON.stringify(cartProducts))
+
 }
+
 
 const loadNumberCart = () => {
     let quantityCart = cartProducts.reduce((sum, element) => sum + element.quantity, 0);
     cartNumber.innerText = quantityCart;
 }
 
+const notification = () => {
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-start',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+        })
+        
+        Toast.fire({
+        icon: 'success',
+        title: 'Producto agregado al carrito'
+    })
+}
+
 
 /********************************
             Events
 ********************************/
+//Se traen datos del json que contiene los productos como si fuera una API externa.
+fetch("../data-JSON/productos.json")
+    .then(res => res.json())
+    .then(json => {
+        products = [...json]
+    })
 
 //Filter Bar
 filterButton.addEventListener("click", openFilter = (e) => {
     e.preventDefault
   
   
-    if(filterActive == true)
-    {filterbar.style.top = "50px";
-      filterActive = false;
+    if(filterActive == true){
+        filterbar.style.top = "50px";
+        filterActive = false;
     }else{
-      filterbar.style.top = "-500px";
-      filterActive = true;
+        filterbar.style.top = "-500px";
+        filterActive = true;
     }
   
 })
 
-//Load Products
-loadProducts(products);
+//Load Products: Simulación de tiempo de espera de carga de productos que se cargan con fetch.
+setTimeout(()=>loadProducts(products),500);
 
 categoryButtons.forEach( button => {
 
@@ -301,7 +201,7 @@ const buscarPalabras = () => {
     }) 
 }
 
-//ORDEN DE PRODUCTOS POR price
+//ORDEN DE PRODUCTOS POR PRECIO
 
 //Hago Backup de productos, ya que sort es un prosedimiento destructivo.
 
