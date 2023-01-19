@@ -89,22 +89,25 @@ const loadNumberCart = () => {
 
 const notification = () => {
 
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'bottom-start',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-        })
-        
-        Toast.fire({
-        icon: 'success',
-        title: 'Producto agregado al carrito'
-    })
+    Toastify({
+        text: "PRODUCTO AGREGADO",
+        duration: 2000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: false, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #d90429, #FF5454)",
+          fontSize: '.7em',
+          borderRadius: '2em',
+        },
+        offset: {
+            x: '1rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
 }
 
 
@@ -116,6 +119,10 @@ fetch("../data-JSON/productos.json")
     .then(res => res.json())
     .then(json => {
         products = [...json]
+        setTimeout(()=>{
+
+        },500)
+        setTimeout(()=>loadProducts(products),500);
     })
 
 //Filter Bar
@@ -134,7 +141,6 @@ filterButton.addEventListener("click", openFilter = (e) => {
 })
 
 //Load Products: Simulación de tiempo de espera de carga de productos que se cargan con fetch.
-setTimeout(()=>loadProducts(products),500);
 
 categoryButtons.forEach( button => {
 
@@ -161,16 +167,6 @@ if(cartProductsStorage) {
     cartProducts = [...cartProductsStorage];
     loadNumberCart();
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

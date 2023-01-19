@@ -331,7 +331,7 @@ body::-webkit-scrollbar-thumb {
 .categoria__container {
     width: 80%;
     max-width: 1440px;
-    margin: 20px auto 50px auto;
+    margin: 1rem auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -369,7 +369,7 @@ body::-webkit-scrollbar-thumb {
 
 .location__container {
     width: 100%;
-    margin: auto;
+    margin: 2rem auto 1rem auto;
     display: flex;
     justify-content: center;
 }
@@ -639,15 +639,25 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
+.swal2-popup, .swal2-modal, .swal2-show {
+    border-radius: 1em;
+}
+
+.swal2-image {
+    width: 400px;
+    height: 250px;
+}
+
 
 /***********************************
             CONTACTO
 ************************************/
 .contact__container {
     width: 100%;
+    margin-top: 3rem;
     display: flex;
     flex-flow: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -780,6 +790,7 @@ input[type="checkbox"] {
     }
 
     .footer__container {
+        margin: .5rem auto;
         width: 90%;
     }
 
@@ -933,12 +944,21 @@ input[type="checkbox"] {
     .cart__prod--delete-btn {
         margin: .5rem;
     }
+
+    .swal2-image {
+        width: 300px;
+        height: 180px;
+    }
     
         
 }
 
 /**************CONTACTO**************/
 @media screen and (max-width: 1023px) {
+    .contact__container {
+        margin: 1rem auto;
+    }
+    
     .form {
         width: 90%;
     }
