@@ -92,10 +92,14 @@ body::-webkit-scrollbar-thumb {
     color: var(--red-main);
 }
 
+.chart__button--link {
+    display: none;
+}
+
 .logo {
     font-family: ErasBold;
     font-size: 40px;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .logo__link {
@@ -376,7 +380,7 @@ body::-webkit-scrollbar-thumb {
 
 .location__map {
     max-width: 1440px;
-    height: 200px;
+    height: 400px;
     width: 100%;
 }
 
@@ -772,7 +776,7 @@ input[type="checkbox"] {
         width: 90%;
     }
 
-    .chart__button {
+    .chart__button, .chart__button--link {
         display: block;
     }
 
@@ -851,6 +855,10 @@ input[type="checkbox"] {
 
     .categoria__caption {
         font-size: 14px;
+    }
+
+    .location__map {
+        height: 250px;
     }
 }
 

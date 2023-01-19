@@ -183,6 +183,34 @@ Swal.fire({
   })
 }
 
+const notificationBuy = () => {
+     
+Swal.fire({
+    title: '<strong>¿Desea realizar la compra?</strong>',
+    icon: 'question',
+    html:
+      'Finalizar compra',
+    showCloseButton: false,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:'Comprar',
+    confirmButtonColor: '#ef233c',
+    cancelButtonText: 'Cancelar',
+    cancelButtonColor: '#33373a'
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+        buyCart();
+        Swal.fire({
+            title:'¡Gracias por tu compra!',
+            html: 'Te avisaremos cuando tus productos sean despachados',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#ef233c',
+        })
+        loadProducts();
+    }
+  })
+}
 
 /********************************
             Events
@@ -190,4 +218,4 @@ Swal.fire({
 loadProducts();
 
 buttonEmpty.addEventListener('click', notificationDeleteAll);
-buttonBuy.addEventListener('click', buyCart);
+buttonBuy.addEventListener('click', notificationBuy);
