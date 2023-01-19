@@ -388,6 +388,51 @@ body::-webkit-scrollbar-thumb {
         PRODUCTOS y CARRITO
 ************************************/
 
+/*Pantalla de Carga*/
+
+.load {
+    position:absolute;
+    top:50%;
+    left:60%;
+    transform:translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width:100px;
+    height:100px;
+}
+.load hr {
+    border:0;
+    margin:0;
+    width:40%;
+    height:40%;
+    position:absolute;
+    border-radius:50%;
+    animation:spin 2s ease infinite
+}
+  
+.load :first-child{
+    background:var(--red-light-2);
+    animation-delay:-1.5s
+}
+.load :nth-child(2){
+    background:var(--grey-dark);
+    animation-delay:-1s
+}
+.load :nth-child(3){
+    background:var(--red-light-2);
+    animation-delay:-0.5s
+}
+.load :last-child{
+    background:var(--grey-dark)
+}
+  
+@keyframes spin{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(160%)}
+    50%{transform:translate(160%, 160%)}
+    75%{transform:translate(0, 160%)}
+}
+
+
 .products__main {
     background-color: var(--red-main);
 }
@@ -469,7 +514,6 @@ body::-webkit-scrollbar-thumb {
     margin-left: 2rem;
     font-family: ErasDemi;
     letter-spacing: 2px;
-
 }
 
 .prod__container {
@@ -478,7 +522,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: flex-start;
     margin: auto;
-
+    min-height: 600px;
 }
 
 .prod__item {
@@ -864,7 +908,13 @@ input[type="checkbox"] {
 
 /**************PRODUCTOS**************/
 @media screen and (max-width: 1023px) {
-   
+
+    .load {
+        position:absolute;
+        top:50%;
+        left:50%;
+    }
+
     .category__back {
         display: none;
     }

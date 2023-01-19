@@ -10,6 +10,7 @@ let wrapper = document.getElementById('prod__container');
 let categoryButtons = document.querySelectorAll('.category__button');
 let prodTitle = document.querySelector('#prod__title');
 let cartNumber = document.querySelector('#cart-number');
+let prodLoad = document.querySelector('#products__download');
 
 //Storage
 const cartProductsStorage = JSON.parse(localStorage.getItem("cart-products"));
@@ -122,7 +123,10 @@ fetch("../data-JSON/productos.json")
         setTimeout(()=>{
 
         },500)
-        setTimeout(()=>loadProducts(products),500);
+        setTimeout(()=>{
+            loadProducts(products)
+            prodLoad.style.display = "none";
+        },2500);
     })
 
 //Filter Bar
