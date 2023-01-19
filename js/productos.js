@@ -125,7 +125,7 @@ const searchProducts = (e) => {
     resultProducts.length = 0;
     searchedWords.length = 0;
 
-    let words = document.querySelector('#searchbar__input').value;
+    let words = document.querySelector('#searchbar__input').value.toLowerCase();
     searchedWords.push(...words.split(' '));
 
     searchedWords.forEach((element)=>{
