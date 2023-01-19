@@ -3,14 +3,15 @@
 ********************************/
 //DOM
 
-let filterbar = document.getElementById("filterbar");
-let filterButton = document.getElementById("filter__button");
+const filterbar = document.getElementById("filterbar");
+const filterButton = document.getElementById("filter__button");
 
-let wrapper = document.getElementById('prod__container');
-let categoryButtons = document.querySelectorAll('.category__button');
-let prodTitle = document.querySelector('#prod__title');
-let cartNumber = document.querySelector('#cart-number');
-let prodLoad = document.querySelector('#products__download');
+const wrapper = document.getElementById('prod__container');
+const searchbar = document.querySelector('#searchbar');
+const categoryButtons = document.querySelectorAll('.category__button');
+const prodTitle = document.querySelector('#prod__title');
+const cartNumber = document.querySelector('#cart-number');
+const prodLoad = document.querySelector('#products__download');
 
 //Storage
 const cartProductsStorage = JSON.parse(localStorage.getItem("cart-products"));
@@ -21,11 +22,15 @@ let btnAdd;
 let cartProducts = [];
 let filterActive = true;
 
+const searchedWords = [];
+const resultProducts = [];
+
 
 /********************************
             Functions
 ********************************/
 
+//carga de productos
 const loadProducts = (productsCategory) => {
     wrapper.innerHTML = "";
 
@@ -50,6 +55,7 @@ const loadProducts = (productsCategory) => {
     loadAddBtns();
 }
 
+//asigno escucha de evento click a cada botón de agregar
 const loadAddBtns = () => {
 
     btnAdd = document.querySelectorAll('.prod__item--button');
@@ -61,7 +67,7 @@ const loadAddBtns = () => {
     })
 }
 
-
+//agrega el producto al carrito en localStorage
 const addToCart = (e) => {
 
     let prodToAdd = products.find((element) => {
@@ -82,12 +88,13 @@ const addToCart = (e) => {
 
 }
 
-
+//actualiza el número de productos en carrito
 const loadNumberCart = () => {
     let quantityCart = cartProducts.reduce((sum, element) => sum + element.quantity, 0);
     cartNumber.innerText = quantityCart;
 }
 
+//notificación de toastify al agregar productos
 const notification = () => {
 
     Toastify({
@@ -111,6 +118,42 @@ const notification = () => {
       }).showToast();
 }
 
+const searchProducts = (e) => {
+    
+    e.preventDefault()
+    const duplicatedSearch = [];
+    resultProducts.length = 0;
+    searchedWords.length = 0;
+
+    let words = document.querySelector('#searchbar__input').value;
+    searchedWords.push(...words.split(' '));
+
+    searchedWords.forEach((element)=>{
+        let result = products.filter((prodItem) => {
+            return prodItem.description.toLowerCase().includes(element);
+        })
+
+        duplicatedSearch.push(...result);
+
+    })
+
+    const filteredResult = duplicatedSearch.reduce((sum, element) => {
+        if(!sum.find(prod => prod.description == element.description)) {
+            sum.push(element);
+        }
+        return sum;
+        }, 
+    [])
+
+    resultProducts.push(...filteredResult);
+
+    loadProducts(resultProducts);
+
+    categoryButtons.forEach(button => button.classList.remove("active__btn"))
+    prodTitle.innerText = "Resultado de búsqueda";
+    filterbar.style.top = "-500px";
+    filterActive = true;
+}
 
 /********************************
             Events
@@ -120,13 +163,11 @@ fetch("../data-JSON/productos.json")
     .then(res => res.json())
     .then(json => {
         products = [...json]
-        setTimeout(()=>{
-
-        },500)
+    
         setTimeout(()=>{
             loadProducts(products)
             prodLoad.style.display = "none";
-        },2500);
+        },0);
     })
 
 //Filter Bar
@@ -172,124 +213,4 @@ if(cartProductsStorage) {
     loadNumberCart();
 }
 
-
-
-/*  
-//BUSCADOR
-//Creo arrays para palabras buscadas y resultado
-const palabrasBuscadas = [];
-const resultado = [];
-
-//Pido los productos buscados y los guardo en un array
-//Como esto da duplicados cuando buscamos palabras que coincidan en un mismo producto (como: la el de del a para más. etc ) o si se escriben 2 veces el mismo producto, aplico reduce para borrar duplicados
-
-const pedirProductos = () => {
-
-    let productosBuscados = prompt("Ingresar Producto a Buscar").toLowerCase();
-    palabrasBuscadas.push(...productosBuscados.split(' '));
-    
-}
-
-//Busco cada palabra buscada en el array de productos. Si la palabra se encuentra en la descripción entonces lo agrego (push) al resultado de búsqueda.
-const buscarPalabras = () => {
-    
-    palabrasBuscadas.forEach((palabra)=>{
-        let resultadoParcial = products.filter((prodItem) => {
-            return prodItem.description.toLowerCase().includes(palabra);
-        })
-        resultado.push(...resultadoParcial);
-    }) 
-}
-
-//ORDEN DE PRODUCTOS POR PRECIO
-
-//Hago Backup de productos, ya que sort es un prosedimiento destructivo.
-
-let order;
-const productsBackup = [];
-productsBackup.push(...products);
-console.table(productsBackup); //Muestro los productos por default.
-
-//Función para pedir asc o desc
-const ascOrDesc = () => {
-    
-    order = prompt(`Ingrese "asc" para orden ascendente o "desc" para orden descendente`).toLowerCase();
-
-}
-
-//Función que apartir del dato order ordena asc o desc. En caso que se ingrese mal la orden consulta si quiere volver a intentarlo y llama a las funciones.
-
-
-const sortProducts = (order) => {
-
-    if(order == "asc"){
-        productsBackup.sort((a, b) => {
-            if(a.price > b.price){
-                return 1;
-            }
-            if(a.price < b.price){
-                return -1;
-            }
-            
-            return 0;
-            
-        })
-    }else if(order == "desc") {
-        productsBackup.sort((a, b) => {
-            if(a.price > b.price){
-                return -1;
-            }
-            if(a.price < b.price){
-                return 1;
-            }
-            
-            return 0;
-        })
-    }else{
-        let qa = confirm("¿Ingresó un valor equivocado, desea volver a intentarlo?");
-
-        if(qa){
-            ascOrDesc();
-            sortProducts(order);
-        }else{
-            console.log(productsBackup)
-        }
-    }
-
-}
-
-
-//Consulto la operación que quiere realizar el usuario
-let option = prompt(`Si desea ordenar ingrese "ordenar", si desea buscar productos ingrese "buscar"`, "");
-
-//Según la opción ejecto las funciones de búsqueda u orden.
-// En un futuro cada función se aplica al addEventListener de submit para buscador o input.value del option asc o desc (como en mercado libre).
-
-switch(option){
-    case "ordenar":
-        ascOrDesc();
-        sortProducts(order);
-        console.table(productsBackup);
-        break;
-    
-    case "buscar":
-        pedirProductos();
-        console.log("Las palabras buscadas son ", palabrasBuscadas);
-        buscarPalabras();
-        console.log("El resultado de búsqueda con duplicados es:")
-        console.table(resultado);
-        // Como esto puede dar duplicados cuando se ingresan dos palabras iguales, o que un producto contenga dos palabras buscadas.
-        const resultadoFiltrado = resultado.reduce((acumulador, element) => {
-        if(!acumulador.find(dato => dato.description == element.description)) {
-            acumulador.push(element);
-        }
-        return acumulador;
-        }, [])
-        console.log("El resultado de búsqueda final es:")
-        console.table(resultadoFiltrado);
-        break;
-
-    default:
-        alert("lo sentimos, se ah producido un error")
-        break
-} */
+searchbar.addEventListener('submit', searchProducts);
