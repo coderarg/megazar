@@ -167,7 +167,7 @@ fetch("../data-JSON/productos.json")
         setTimeout(()=>{
             loadProducts(products)
             prodLoad.style.display = "none";
-        },0);
+        },1000);
     })
 
 //Filter Bar
